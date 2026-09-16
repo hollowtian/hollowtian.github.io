@@ -56,6 +56,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -173,6 +174,11 @@ img {
   gap: 24px;
   font-size: 11px;
 }
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
 
 
 /* HOME — HERO
@@ -353,15 +359,19 @@ img {
   min-height: 185px;
   padding: 14px;
   border-right: 1px solid var(--color-text);
+
   position: relative;
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   background-color: var(--color-placeholder);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   transition:
     filter var(--transition-medium),
     transform var(--transition-medium);
@@ -448,8 +458,9 @@ img {
 }
 
 
-/* PROJECT INDEX
---------------------------------------------------------- */
+/* =========================================================
+   PROJECT INDEX
+   ========================================================= */
 
 .project-index-section {
   margin-bottom: 100px;
@@ -461,6 +472,7 @@ img {
 
 .project-index-row {
   display: grid;
+
   grid-template-columns:
     50px
     120px
@@ -468,11 +480,15 @@ img {
     1.4fr
     1fr
     1.2fr;
+
   gap: 18px;
   align-items: center;
+
   min-height: 108px;
   padding: 12px 0;
+
   border-bottom: 1px solid var(--color-line);
+
   transition: background var(--transition-fast);
 }
 
@@ -497,9 +513,12 @@ img {
 .project-index-thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
+
   background-color: var(--color-placeholder);
+
   position: relative;
   overflow: hidden;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -519,19 +538,23 @@ img {
 }
 
 
-/* JOURNAL PAGE
---------------------------------------------------------- */
+/* =========================================================
+   JOURNAL PAGE
+   ========================================================= */
 
 .journal-intro {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
+
   padding: 24px 0 100px;
+
   border-top: 1px solid var(--color-text);
 }
 
 .journal-intro-text {
   max-width: 1000px;
+
   font-size: clamp(28px, 3vw, 46px);
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -544,16 +567,23 @@ img {
 
 .journal-category {
   display: grid;
+
   grid-template-columns:
     70px
     1.5fr
     2fr
     auto;
+
   gap: 30px;
   align-items: center;
+
   min-height: 125px;
+
   border-bottom: 1px solid #bdbdb8;
-  transition: background var(--transition-fast);
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .journal-category:hover {
@@ -591,11 +621,20 @@ img {
   gap: 24px;
 }
 
+.journal-post {
+  display: block;
+}
+
 .journal-post-image {
   aspect-ratio: 4 / 3;
+
   background-color: var(--color-placeholder);
+
   margin-bottom: 12px;
+
   position: relative;
+  overflow: hidden;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -616,6 +655,7 @@ img {
 
 .journal-post-category {
   margin-bottom: 7px;
+
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -634,20 +674,31 @@ img {
   color: #666;
 }
 
+.journal-empty {
+  grid-column: 1 / -1;
+  padding: 40px 0 80px;
+  font-size: 12px;
+  color: var(--color-muted);
+}
 
-/* ABOUT PAGE
---------------------------------------------------------- */
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
 
 .about-intro {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
+
   padding: 24px 0 90px;
+
   border-top: 1px solid var(--color-text);
 }
 
 .about-intro-text {
   max-width: 900px;
+
   font-size: clamp(26px, 2.7vw, 42px);
   line-height: 1.12;
   letter-spacing: -0.035em;
@@ -657,7 +708,9 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+
   padding: 24px 0 90px;
+
   border-top: 1px solid var(--color-text);
 }
 
@@ -677,7 +730,9 @@ img {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
+
   padding: 24px 0 110px;
+
   border-top: 1px solid var(--color-text);
 }
 
@@ -700,17 +755,22 @@ img {
 .about-interests {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+
   border-top: 1px solid var(--color-text);
+
   margin-bottom: 120px;
 }
 
 .about-interest {
   min-height: 180px;
   padding: 14px;
+
   border-right: 1px solid var(--color-text);
   border-bottom: 1px solid var(--color-text);
+
   display: flex;
   align-items: flex-end;
+
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -721,19 +781,23 @@ img {
 }
 
 
-/* CV PAGE
---------------------------------------------------------- */
+/* =========================================================
+   CV PAGE
+   ========================================================= */
 
 .cv-intro {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
+
   padding: 24px 0 90px;
+
   border-top: 1px solid var(--color-text);
 }
 
 .cv-intro-text {
   max-width: 900px;
+
   font-size: clamp(24px, 2.5vw, 38px);
   line-height: 1.12;
   letter-spacing: -0.035em;
@@ -747,7 +811,9 @@ img {
 .cv-section-heading {
   display: grid;
   grid-template-columns: 1fr 3fr;
+
   margin-bottom: 36px;
+
   align-items: baseline;
 }
 
@@ -759,12 +825,16 @@ img {
 
 .cv-entry {
   display: grid;
+
   grid-template-columns:
     1fr
     1.5fr
     3fr;
+
   gap: 30px;
+
   padding: 22px 0;
+
   border-top: 1px solid var(--color-line);
 }
 
@@ -785,13 +855,16 @@ img {
 
 .cv-entry-subtitle {
   margin-top: 5px;
+
   font-size: 12px;
   line-height: 1.5;
+
   color: var(--color-muted);
 }
 
 .cv-entry-description {
   max-width: 760px;
+
   font-size: 13px;
   line-height: 1.55;
 }
@@ -810,6 +883,7 @@ img {
 
 .cv-block-title {
   margin-bottom: 18px;
+
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -817,6 +891,7 @@ img {
 
 .cv-small-title {
   margin-bottom: 14px;
+
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -840,7 +915,7 @@ img {
 }
 
 
-/* TITLE
+/* WORK TITLE
 --------------------------------------------------------- */
 
 .project-detail-header {
@@ -849,6 +924,7 @@ img {
 
 .project-detail-kicker {
   margin-bottom: 12px;
+
   font-size: 9px;
   line-height: 1.35;
   letter-spacing: 0.08em;
@@ -864,25 +940,32 @@ img {
 }
 
 
-/* HERO + SIDEBAR
+/* WORK HERO + SIDEBAR
 --------------------------------------------------------- */
 
 .project-hero-layout {
   display: grid;
+
   grid-template-columns:
     minmax(0, 3.35fr)
     minmax(190px, 1fr);
+
   gap: 24px;
+
   align-items: start;
+
   margin-bottom: 72px;
 }
 
 .project-hero-image {
   width: 100%;
   aspect-ratio: 4 / 3;
+
   background-color: var(--color-placeholder);
+
   position: relative;
   overflow: hidden;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -890,9 +973,11 @@ img {
 
 .project-hero-image::after {
   content: "IMAGE";
+
   position: absolute;
   left: 8px;
   bottom: 8px;
+
   font-size: 8px;
   letter-spacing: 0.09em;
 }
@@ -912,6 +997,7 @@ img {
 
 .project-sidebar-label {
   margin-bottom: 4px;
+
   font-size: 8px;
   line-height: 1.2;
   letter-spacing: 0.08em;
@@ -924,14 +1010,16 @@ img {
 }
 
 
-/* COPY
+/* WORK COPY
 --------------------------------------------------------- */
 
 .project-copy-section {
   width: var(--project-column-width);
+
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 28px;
+
   padding-bottom: 78px;
 }
 
@@ -948,6 +1036,7 @@ img {
 
 .project-copy h2 {
   margin-bottom: 14px;
+
   font-size: 13px;
   line-height: 1.3;
   font-weight: 600;
@@ -955,6 +1044,7 @@ img {
 
 .project-copy p {
   margin-bottom: 15px;
+
   font-size: 12px;
   line-height: 1.6;
 }
@@ -964,7 +1054,7 @@ img {
 }
 
 
-/* GALLERY
+/* WORK GALLERY
 --------------------------------------------------------- */
 
 .project-gallery {
@@ -982,9 +1072,12 @@ img {
 
 .project-gallery-image {
   width: 100%;
+
   background-color: var(--color-placeholder);
+
   position: relative;
   overflow: hidden;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -992,9 +1085,11 @@ img {
 
 .project-gallery-image::after {
   content: "IMAGE";
+
   position: absolute;
   left: 8px;
   bottom: 8px;
+
   font-size: 8px;
   letter-spacing: 0.09em;
 }
@@ -1002,10 +1097,6 @@ img {
 .project-gallery-image.has-image::after {
   content: none;
 }
-
-
-/* IMAGE FORMATS
---------------------------------------------------------- */
 
 .project-gallery-landscape {
   aspect-ratio: 16 / 10;
@@ -1028,14 +1119,11 @@ img {
   margin-left: auto;
 }
 
-
-/* TWO IMAGE ROW
---------------------------------------------------------- */
-
 .project-gallery-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+
   margin-bottom: 28px;
 }
 
@@ -1043,31 +1131,33 @@ img {
   margin-bottom: 0;
 }
 
-
-/* CAPTIONS
---------------------------------------------------------- */
-
 .project-caption {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
   padding-top: 5px;
+
   font-size: 8px;
   line-height: 1.35;
   letter-spacing: 0.03em;
+
   color: var(--color-muted);
 }
 
 
-/* PROJECT NAVIGATION
+/* WORK NAVIGATION
 --------------------------------------------------------- */
 
 .project-end {
   width: var(--project-column-width);
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+
   padding-top: 14px;
+
   border-top: 1px solid var(--color-text);
 }
 
@@ -1080,8 +1170,209 @@ img {
 }
 
 
-/* OPTIONAL CROP UTILITIES
+/* =========================================================
+   ARTICLE PAGE
+   ========================================================= */
+
+.article-page {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+
+
+/* ARTICLE HEADER
 --------------------------------------------------------- */
+
+.article-header {
+  padding: 42px 0 42px;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 18px;
+
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-title {
+  max-width: 950px;
+
+  font-size: clamp(46px, 6vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  font-weight: 700;
+}
+
+
+/* ARTICLE HERO
+--------------------------------------------------------- */
+
+.article-hero {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  margin-bottom: 72px;
+
+  background-color: var(--color-placeholder);
+
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.article-hero::after {
+  content: "IMAGE";
+
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+
+  font-size: 8px;
+  letter-spacing: 0.09em;
+}
+
+.article-hero.has-image::after {
+  content: none;
+}
+
+
+/* ARTICLE BODY
+--------------------------------------------------------- */
+
+.article-body {
+  width: 74%;
+  max-width: 760px;
+}
+
+.article-paragraph {
+  max-width: 650px;
+
+  margin-bottom: 22px;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.article-heading {
+  max-width: 650px;
+
+  margin-top: 58px;
+  margin-bottom: 18px;
+
+  font-size: 26px;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.article-quote {
+  max-width: 700px;
+
+  margin: 58px 0;
+
+  padding-left: 22px;
+
+  border-left: 1px solid var(--color-text);
+
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+
+
+/* ARTICLE IMAGES
+--------------------------------------------------------- */
+
+.article-figure {
+  width: 100%;
+  margin: 56px 0;
+}
+
+.article-image {
+  width: 100%;
+
+  background-color: var(--color-placeholder);
+
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.article-image::after {
+  content: "IMAGE";
+
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+
+  font-size: 8px;
+  letter-spacing: 0.09em;
+}
+
+.article-image.has-image::after {
+  content: none;
+}
+
+.article-image-landscape {
+  aspect-ratio: 16 / 10;
+}
+
+.article-image-wide {
+  aspect-ratio: 16 / 9;
+}
+
+.article-image-square {
+  aspect-ratio: 1 / 1;
+}
+
+.article-image-portrait {
+  width: 70%;
+  aspect-ratio: 3 / 4;
+}
+
+.article-caption {
+  padding-top: 6px;
+
+  font-size: 8px;
+  line-height: 1.4;
+
+  color: var(--color-muted);
+}
+
+
+/* ARTICLE END
+--------------------------------------------------------- */
+
+.article-end {
+  width: 74%;
+
+  margin-top: 90px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid var(--color-text);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CROP UTILITIES
+   ========================================================= */
 
 .crop-top {
   background-position: 50% 30%;
@@ -1100,8 +1391,9 @@ img {
 }
 
 
-/* MOBILE
---------------------------------------------------------- */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -1110,7 +1402,8 @@ img {
   }
 
 
-  /* HEADER */
+  /* HEADER
+  ------------------------------------------------------- */
 
   .site-header {
     height: auto;
@@ -1125,7 +1418,12 @@ img {
   }
 
 
-  /* GLOBAL */
+  /* GLOBAL
+  ------------------------------------------------------- */
+
+  .page-title {
+    padding: 28px 0 60px;
+  }
 
   .section-heading,
   .cv-section-heading {
@@ -1134,7 +1432,8 @@ img {
   }
 
 
-  /* HOME */
+  /* HOME
+  ------------------------------------------------------- */
 
   .home-hero {
     grid-template-columns: 1fr;
@@ -1193,58 +1492,20 @@ img {
   }
 
 
-  /* ABOUT / CV */
+  /* JOURNAL
+  ------------------------------------------------------- */
 
-  .journal-intro,
-  .about-intro,
-  .about-bio,
-  .cv-intro {
+  .journal-intro {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-
-  .about-details,
-  .cv-skills-grid,
-  .cv-additional-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-interests {
-    grid-template-columns: 1fr;
-  }
-
-  .about-interest {
-    min-height: 100px;
-    border-left: 1px solid var(--color-text);
-  }
-
-
-  /* PROJECT INDEX */
-
-  .project-index-row {
-    grid-template-columns:
-      40px
-      90px
-      1fr;
-    gap: 12px;
-    padding: 16px 0;
-    min-height: auto;
-  }
-
-  .project-index-location,
-  .project-index-type,
-  .project-index-office {
-    grid-column: 3;
-  }
-
-
-  /* JOURNAL */
 
   .journal-category {
     grid-template-columns:
       40px
       1fr
       auto;
+
     gap: 12px;
     padding: 18px 0;
   }
@@ -1258,7 +1519,41 @@ img {
   }
 
 
-  /* CV */
+  /* ABOUT
+  ------------------------------------------------------- */
+
+  .about-intro,
+  .about-bio {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+
+  .about-interests {
+    grid-template-columns: 1fr;
+  }
+
+  .about-interest {
+    min-height: 100px;
+    border-left: 1px solid var(--color-text);
+  }
+
+
+  /* CV
+  ------------------------------------------------------- */
+
+  .cv-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cv-skills-grid,
+  .cv-additional-grid {
+    grid-template-columns: 1fr;
+  }
 
   .cv-entry {
     grid-template-columns: 1fr;
@@ -1266,7 +1561,31 @@ img {
   }
 
 
-  /* WORK DETAIL */
+  /* PROJECT INDEX
+  ------------------------------------------------------- */
+
+  .project-index-row {
+    grid-template-columns:
+      40px
+      90px
+      1fr;
+
+    gap: 12px;
+
+    padding: 16px 0;
+
+    min-height: auto;
+  }
+
+  .project-index-location,
+  .project-index-type,
+  .project-index-office {
+    grid-column: 3;
+  }
+
+
+  /* WORK DETAIL
+  ------------------------------------------------------- */
 
   .project-page {
     max-width: none;
@@ -1334,9 +1653,57 @@ img {
   }
 
 
-  /* FOOTER */
+  /* ARTICLE
+  ------------------------------------------------------- */
+
+  .article-page {
+    max-width: none;
+  }
+
+  .article-header {
+    padding: 30px 0 32px;
+  }
+
+  .article-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .article-title {
+    font-size: clamp(44px, 13vw, 78px);
+  }
+
+  .article-hero {
+    margin-bottom: 48px;
+  }
+
+  .article-body,
+  .article-end {
+    width: 100%;
+  }
+
+  .article-paragraph {
+    max-width: none;
+  }
+
+  .article-heading {
+    max-width: none;
+  }
+
+  .article-quote {
+    max-width: none;
+  }
+
+  .article-image-portrait {
+    width: 100%;
+  }
+
+
+  /* FOOTER
+  ------------------------------------------------------- */
 
   .site-footer {
     flex-direction: column;
   }
+
 }
