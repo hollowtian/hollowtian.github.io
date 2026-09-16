@@ -200,7 +200,7 @@ img {
 .home-work-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 24px;
+  column-gap: 12px;
   padding-bottom: 100px;
 }
 
