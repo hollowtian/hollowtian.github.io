@@ -407,18 +407,24 @@ const WORKS = {
     status: "—",
 
 
+    /* PROJECT INDEX */
+
     category: "professional",
 
     index: {
 
       show: true,
 
-      image: null,
+      image:
+        "images/projects/building-140/01-hero.jpg",
 
-      position: "50% 50%"
+      position:
+        "50% 50%"
 
     },
 
+
+    /* HOMEPAGE */
 
     featured: true,
 
@@ -430,12 +436,16 @@ const WORKS = {
 
       size: "feature",
 
-      image: null,
+      image:
+        "images/projects/building-140/01-hero.jpg",
 
-      position: "50% 50%"
+      position:
+        "50% 50%"
 
     },
 
+
+    /* PROJECT PAGE */
 
     page: true,
 
@@ -444,21 +454,25 @@ const WORKS = {
 
       "Building 140 is an adaptive reuse project on Governors Island, New York.",
 
-      "Project description and design narrative will be added here."
+      "Project description and design narrative will be added here. This section can describe the project's transformation strategy, existing building character, material interventions and relationship to the island context."
 
     ],
 
 
     hero: {
 
-      image: null,
+      image:
+        "images/projects/building-140/01-hero.jpg",
 
-      position: "50% 50%"
+      position:
+        "50% 50%"
 
     },
 
 
-    gallery: [],
+    gallery: [
+
+    ],
 
 
     previous: "luxelake-c23",
