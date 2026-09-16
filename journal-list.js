@@ -1,5 +1,6 @@
 /* =========================================================
    JOURNAL LIST RENDERER
+   Journal Page + Homepage
    ========================================================= */
 
 
@@ -55,7 +56,116 @@ function applyJournalImage(
 
 
 /* =========================================================
-   CATEGORY DIRECTORY
+   HOMEPAGE JOURNAL CATEGORIES
+   ========================================================= */
+
+
+function renderHomeJournalCategories() {
+
+
+  const container =
+    document.getElementById(
+      "home-journal-grid"
+    );
+
+
+  if (!container) {
+    return;
+  }
+
+
+
+  Object.entries(
+    JOURNAL_CATEGORIES
+  ).forEach(
+    ([id, category]) => {
+
+
+      const item =
+        document.createElement("a");
+
+
+      item.className =
+        "home-journal-item";
+
+
+      item.href =
+        `journal.html?category=${id}`;
+
+
+
+      applyJournalImage(
+        item,
+        category.image,
+        category.position
+      );
+
+
+
+      const overlay =
+        document.createElement("div");
+
+
+      overlay.className =
+        "home-journal-overlay";
+
+
+
+      const number =
+        document.createElement("span");
+
+
+      number.className =
+        "home-journal-number";
+
+
+      number.textContent =
+        category.number;
+
+
+
+      const name =
+        document.createElement("span");
+
+
+      name.className =
+        "home-journal-name";
+
+
+      name.textContent =
+        category.title;
+
+
+
+      item.appendChild(
+        overlay
+      );
+
+
+      item.appendChild(
+        number
+      );
+
+
+      item.appendChild(
+        name
+      );
+
+
+      container.appendChild(
+        item
+      );
+
+
+    }
+  );
+
+}
+
+
+
+/* =========================================================
+   JOURNAL PAGE CATEGORY DIRECTORY
    ========================================================= */
 
 
@@ -113,7 +223,9 @@ function renderJournalCategories() {
       `;
 
 
-      container.appendChild(item);
+      container.appendChild(
+        item
+      );
 
 
     }
@@ -124,7 +236,7 @@ function renderJournalCategories() {
 
 
 /* =========================================================
-   ARTICLE LIST
+   JOURNAL ARTICLE LIST
    ========================================================= */
 
 
@@ -206,7 +318,9 @@ function renderJournalPosts() {
       "No entries yet.";
 
 
-    container.appendChild(empty);
+    container.appendChild(
+      empty
+    );
 
 
     return;
@@ -277,12 +391,19 @@ function renderJournalPosts() {
 
 
 
-      article.appendChild(image);
+      article.appendChild(
+        image
+      );
 
-      article.appendChild(information);
+
+      article.appendChild(
+        information
+      );
 
 
-      container.appendChild(article);
+      container.appendChild(
+        article
+      );
 
 
     }
@@ -296,6 +417,8 @@ function renderJournalPosts() {
    RUN
    ========================================================= */
 
+
+renderHomeJournalCategories();
 
 renderJournalCategories();
 
