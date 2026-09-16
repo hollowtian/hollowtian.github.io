@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CV — Haotian Zhang</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f7f5;
+      color: #111;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      padding: 0 32px;
+    }
+
+    header {
+      height: 72px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      border-bottom: 1px solid #111;
+    }
+
+    .site-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 12px;
+    }
+
+    .page-title {
+      padding: 30px 0 80px;
+    }
+
+    h1 {
+      font-size: clamp(90px, 13vw, 210px);
+      line-height: 0.82;
+      letter-spacing: -0.07em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      padding: 24px 0 90px;
+      border-top: 1px solid #111;
+    }
+
+    .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .intro-text {
+      font-size: clamp(26px, 3vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      max-width: 1000px;
+    }
+
+    .cv-section {
+      border-top: 1px solid #111;
+      padding: 18px 0 90px;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      margin-bottom: 40px;
+      align-items: baseline;
+    }
+
+    .section-title {
+      font-size: 32px;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 3fr;
+      gap: 30px;
+      padding: 22px 0;
+      border-top: 1px solid #c8c8c3;
+    }
+
+    .entry:last-child {
+      border-bottom: 1px solid #c8c8c3;
+    }
+
+    .date {
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .entry-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .entry-subtitle {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .entry-description {
+      font-size: 13px;
+      line-height: 1.55;
+      max-width: 760px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+    }
+
+    .skill-group {
+      border-top: 1px solid #c8c8c3;
+      padding-top: 14px;
+    }
+
+    .skill-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: -0.025em;
+    }
+
+    .skill-list {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .additional-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+    }
+
+    .additional-block {
+      border-top: 1px solid #c8c8c3;
+      padding-top: 14px;
+    }
+
+    .additional-title {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .additional-text {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid #111;
+      padding: 18px 0 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+
+    @media (max-width: 900px) {
+
+      .page {
+        padding: 0 16px;
+      }
+
+      header {
+        height: auto;
+        padding: 18px 0;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      nav {
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .entry {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .skills-grid,
+      .additional-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header>
+
+      <a class="site-name" href="index.html">
+        HAOTIAN ZHANG
+      </a>
+
+      <nav>
+        <a href="index.html#work">WORK</a>
+        <a href="projects.html">PROJECT INDEX</a>
+        <a href="index.html#journal">JOURNAL</a>
+        <a href="about.html">ABOUT</a>
+        <a href="cv.html">CV</a>
+      </nav>
+
+    </header>
+
+
+    <main>
+
+      <section class="page-title">
+        <h1>CV</h1>
+      </section>
+
+
+      <section class="intro">
+
+        <div class="label">
+          Profile
+        </div>
+
+        <div class="intro-text">
+          Licensed architect based in New York with experience across
+          high-rise, mixed-use, residential, adaptive reuse and educational projects.
+        </div>
+
+      </section>
+
+
+      <!-- EXPERIENCE -->
+
+      <section class="cv-section">
+
+        <div class="section-heading">
+          <div class="label">01</div>
+          <div class="section-title">Experience</div>
+        </div>
+
+
+        <div class="entry">
+
+          <div class="date">
+            2022 — Present
+          </div>
+
+          <div>
+            <div class="entry-title">SHoP Architects</div>
+
+            <div class="entry-subtitle">
+              Associate<br>
+              New York, NY
+            </div>
+          </div>
+
+          <div class="entry-description">
+            Architectural design and project development across multiple scales
+            and typologies, with work spanning concept design, facade systems,
+            design development, consultant coordination and project delivery.
+          </div>
+
+        </div>
+
+
+        <div class="entry">
+
+          <div class="date">
+            2020 — 2022
+          </div>
+
+          <div>
+            <div class="entry-title">DLR Group</div>
+
+            <div class="entry-subtitle">
+              Junior Architectural Designer<br>
+              Washington, DC
+            </div>
+          </div>
+
+          <div class="entry-description">
+            Contributed to educational projects across design development and
+            construction documentation, supporting architectural coordination
+            and project delivery.
+          </div>
+
+        </div>
+
+
+        <div class="entry">
+
+          <div class="date">
+            2018
+          </div>
+
+          <div>
+            <div class="entry-title">Shenzhen Washing Design</div>
+
+            <div class="entry-subtitle">
+              Internship
+            </div>
+          </div>
+
+          <div class="entry-description">
+            Contributed to early-stage architectural design and visualization
+            during concept and schematic design phases.
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- EDUCATION -->
+
+      <section class="cv-section">
+
+        <div class="section-heading">
+          <div class="label">02</div>
+          <div class="section-title">Education</div>
+        </div>
+
+
+        <div class="entry">
+
+          <div class="date">
+            2019 — 2020
+          </div>
+
+          <div>
+            <div class="entry-title">Cornell University</div>
+
+            <div class="entry-subtitle">
+              Ithaca, New York
+            </div>
+          </div>
+
+          <div class="entry-description">
+            Master of Science in Advanced Architectural Design
+          </div>
+
+        </div>
+
+
+        <div class="entry">
+
+          <div class="date">
+            2014 — 2019
+          </div>
+
+          <div>
+            <div class="entry-title">Pratt Institute</div>
+
+            <div class="entry-subtitle">
+              Brooklyn, New York
+            </div>
+          </div>
+
+          <div class="entry-description">
+            Bachelor of Architecture
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SKILLS -->
+
+      <section class="cv-section">
+
+        <div class="section-heading">
+          <div class="label">03</div>
+          <div class="section-title">Skills</div>
+        </div>
+
+
+        <div class="skills-grid">
+
+          <div class="skill-group">
+
+            <div class="skill-title">
+              Architecture
+            </div>
+
+            <div class="skill-list">
+              Concept Design<br>
+              Design Development<br>
+              Massing & Master Planning<br>
+              Facade Design<br>
+              Complex Geometry<br>
+              Spatial Programming
+            </div>
+
+          </div>
+
+
+          <div class="skill-group">
+
+            <div class="skill-title">
+              Practice
+            </div>
+
+            <div class="skill-list">
+              BIM Documentation<br>
+              Consultant Coordination<br>
+              Client Coordination<br>
+              Building Code Analysis<br>
+              Zoning Analysis<br>
+              Construction Administration
+            </div>
+
+          </div>
+
+
+          <div class="skill-group">
+
+            <div class="skill-title">
+              Digital Tools
+            </div>
+
+            <div class="skill-list">
+              Revit<br>
+              Rhino / Grasshopper<br>
+              Adobe InDesign<br>
+              Adobe Illustrator<br>
+              Adobe Photoshop<br>
+              Enscape<br>
+              Bluebeam
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ADDITIONAL -->
+
+      <section class="cv-section">
+
+        <div class="section-heading">
+          <div class="label">04</div>
+          <div class="section-title">Additional</div>
+        </div>
+
+
+        <div class="additional-grid">
+
+          <div class="additional-block">
+
+            <div class="additional-title">
+              Registration
+            </div>
+
+            <div class="additional-text">
+              Licensed Architect<br>
+              New York
+            </div>
+
+          </div>
+
+
+          <div class="additional-block">
+
+            <div class="additional-title">
+              Languages
+            </div>
+
+            <div class="additional-text">
+              Chinese — Native<br>
+              English — Fluent
+            </div>
+
+          </div>
+
+
+          <div class="additional-block">
+
+            <div class="additional-title">
+              Interests
+            </div>
+
+            <div class="additional-text">
+              Architecture<br>
+              Photography<br>
+              Automobile<br>
+              Objects & Industrial Design<br>
+              Motorsport
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <footer>
+
+      <div>
+        © 2026 HAOTIAN ZHANG
+      </div>
+
+      <a href="index.html">
+        ← HOME
+      </a>
+
+    </footer>
+
+  </div>
+
+</body>
+</html>
