@@ -1,4 +1,4 @@
-const PROJECTS = {
+const WORKS = {
 
 
   /* =====================================================
@@ -8,49 +8,30 @@ const PROJECTS = {
   "metropolitan-park": {
 
     number: "01",
-
     title: "Metropolitan Park",
 
     location: "Queens, New York",
-
     typology: "Mixed-Use",
-
     office: "SHoP Architects",
-
     role: "Architect / Designer",
 
     year: "—",
-
     status: "—",
 
-
     description: [
-
       "Metropolitan Park is a mixed-use development in Queens, New York.",
-
       "Project description and design narrative will be added here."
-
     ],
-
 
     hero: {
-
       image: null,
-
       position: "50% 50%"
-
     },
 
-
-    gallery: [
-
-    ],
-
+    gallery: [],
 
     previous: null,
-
     next: "yu-qingli"
-
   },
 
 
@@ -62,49 +43,30 @@ const PROJECTS = {
   "yu-qingli": {
 
     number: "02",
-
     title: "Yu Qingli Tower",
 
     location: "Shanghai, China",
-
     typology: "High-Rise",
-
     office: "SHoP Architects",
-
     role: "Architect / Designer",
 
     year: "—",
-
     status: "—",
 
-
     description: [
-
       "Yu Qingli Tower is a high-rise project in Shanghai, China.",
-
       "Project description and design narrative will be added here."
-
     ],
-
 
     hero: {
-
       image: null,
-
       position: "50% 50%"
-
     },
 
-
-    gallery: [
-
-    ],
-
+    gallery: [],
 
     previous: "metropolitan-park",
-
     next: "southside-park"
-
   },
 
 
@@ -116,84 +78,50 @@ const PROJECTS = {
   "southside-park": {
 
     number: "03",
-
     title: "1 Southside Park",
 
     location: "Miami, Florida",
-
     typology: "Mixed-Use",
-
     office: "SHoP Architects",
-
     role: "Architect / Designer",
 
     year: "—",
-
     status: "—",
 
-
     description: [
-
       "1 Southside Park is a mixed-use development in Miami, Florida. The project brings together residential, commercial and public-facing programs within a larger urban framework.",
-
       "Project description and design narrative will be added here. This section can describe the project's urban strategy, massing, facade system, material logic, environmental response and relationship to the surrounding context."
-
     ],
 
-
     hero: {
-
-      image:
-        "images/projects/southside-park/01-hero.jpg",
-
-      position:
-        "50% 50%"
-
+      image: "images/projects/southside-park/01-hero.jpg",
+      position: "50% 50%"
     },
-
 
     gallery: [
 
       /*
-      EXAMPLE:
+      Example:
 
       {
-        image:
-          "images/projects/southside-park/02.jpg",
-
-        ratio:
-          "landscape",
-
-        position:
-          "50% 50%",
-
-        caption:
-          "Exterior View"
+        image: "images/projects/southside-park/02.jpg",
+        ratio: "landscape",
+        position: "50% 50%",
+        caption: "Exterior View"
       },
 
-
       {
-        image:
-          "images/projects/southside-park/03.jpg",
-
-        ratio:
-          "wide",
-
-        position:
-          "50% 40%",
-
-        caption:
-          "Urban Context"
+        image: "images/projects/southside-park/03.jpg",
+        ratio: "wide",
+        position: "50% 40%",
+        caption: "Urban Context"
       }
       */
 
     ],
 
-
     previous: "yu-qingli",
-
     next: "luxelake-c23"
-
   },
 
 
@@ -205,49 +133,30 @@ const PROJECTS = {
   "luxelake-c23": {
 
     number: "04",
-
     title: "Luxelake C23",
 
     location: "Chengdu, China",
-
     typology: "Residential",
-
     office: "SHoP Architects",
-
     role: "Architect / Designer",
 
     year: "—",
-
     status: "—",
 
-
     description: [
-
       "Luxelake C23 is a residential project in Chengdu, China.",
-
       "Project description and design narrative will be added here."
-
     ],
-
 
     hero: {
-
       image: null,
-
       position: "50% 50%"
-
     },
 
-
-    gallery: [
-
-    ],
-
+    gallery: [],
 
     previous: "southside-park",
-
     next: "building-140"
-
   },
 
 
@@ -259,49 +168,30 @@ const PROJECTS = {
   "building-140": {
 
     number: "05",
-
     title: "Building 140",
 
     location: "Governors Island, New York",
-
     typology: "Adaptive Reuse",
-
     office: "SHoP Architects",
-
     role: "Architect / Designer",
 
     year: "—",
-
     status: "—",
 
-
     description: [
-
       "Building 140 is an adaptive reuse project on Governors Island, New York.",
-
       "Project description and design narrative will be added here."
-
     ],
-
 
     hero: {
-
       image: null,
-
       position: "50% 50%"
-
     },
 
-
-    gallery: [
-
-    ],
-
+    gallery: [],
 
     previous: "luxelake-c23",
-
     next: null
-
   }
 
 };
