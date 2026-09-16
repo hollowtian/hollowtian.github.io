@@ -221,12 +221,12 @@ img {
 }
 
 .home-work-column:first-child .home-work-card:nth-child(2) {
-  width: 84%;
+  width: 90%;
   align-self: flex-start;
 }
 
 .home-work-column:nth-child(2) .home-work-card:nth-child(1) {
-  width: 84%;
+  width: 90%;
   align-self: flex-end;
 }
 
