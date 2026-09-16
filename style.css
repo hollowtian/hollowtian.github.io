@@ -1114,7 +1114,12 @@ img {
 --------------------------------------------------------- */
 
 .southside-hero {
-  background-image: none;
+  background-image: url("images/projects/southside-park/01-hero.jpg");
+  background-position: 50% 50%;
+}
+
+.southside-hero::after {
+  content: none;
 }
 
 .southside-image-02 {
