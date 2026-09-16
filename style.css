@@ -182,6 +182,8 @@ img {
   background: #d8d8d3;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
 .home-hero-image::after {
@@ -210,22 +212,21 @@ img {
   gap: 44px;
 }
 
-/* LEFT COLUMN */
+.home-work-card {
+  display: block;
+}
 
 .home-work-column:first-child .home-work-card:nth-child(1) {
   width: 100%;
 }
 
 .home-work-column:first-child .home-work-card:nth-child(2) {
-  width: 90%;
+  width: 84%;
   align-self: flex-start;
 }
 
-
-/* RIGHT COLUMN */
-
 .home-work-column:nth-child(2) .home-work-card:nth-child(1) {
-  width: 90%;
+  width: 84%;
   align-self: flex-end;
 }
 
@@ -233,15 +234,13 @@ img {
   width: 100%;
 }
 
-.home-work-card {
-  display: block;
-}
-
 .home-work-image {
   background: #d2d2cd;
   margin-bottom: 12px;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
 .home-work-image.landscape {
@@ -307,19 +306,37 @@ img {
   min-height: 185px;
   padding: 14px;
   border-right: 1px solid #111;
+  position: relative;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: background 0.2s ease;
+
+  background: #d2d2cd;
+  background-size: cover;
+  background-position: center;
+
+  transition:
+    filter 0.25s ease,
+    transform 0.25s ease;
 }
 
 .home-journal-item:first-child {
   border-left: 1px solid #111;
 }
 
-.home-journal-item:hover {
-  background: #111;
-  color: #f7f7f5;
+.home-journal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 247, 245, 0.22);
+  transition: background 0.25s ease;
+}
+
+.home-journal-number,
+.home-journal-name {
+  position: relative;
+  z-index: 2;
 }
 
 .home-journal-number {
@@ -330,6 +347,38 @@ img {
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.035em;
+}
+
+.home-journal-item:hover {
+  filter: contrast(1.04);
+}
+
+.home-journal-item:hover .home-journal-overlay {
+  background: rgba(247, 247, 245, 0.08);
+}
+
+
+/* JOURNAL BACKGROUND IMAGES
+--------------------------------------------------------- */
+
+.journal-architecture {
+  background-image: none;
+}
+
+.journal-automobile {
+  background-image: none;
+}
+
+.journal-photography {
+  background-image: none;
+}
+
+.journal-objects {
+  background-image: none;
+}
+
+.journal-places {
+  background-image: none;
 }
 
 
@@ -404,6 +453,8 @@ img {
   background: #d2d2cd;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
 .project-index-thumb::after {
@@ -861,9 +912,6 @@ img {
     grid-template-columns: 1fr;
   }
 
-
-  /* HOME WORK — MOBILE */
-
   .home-work-layout {
     display: block;
   }
@@ -873,6 +921,7 @@ img {
   }
 
   .home-work-card {
+    width: 100% !important;
     margin-bottom: 60px;
   }
 
@@ -881,13 +930,12 @@ img {
     margin: 0 0 60px;
   }
 
-
   .home-journal-grid {
     grid-template-columns: 1fr;
   }
 
   .home-journal-item {
-    min-height: 120px;
+    min-height: 140px;
     border-left: 1px solid #111;
     border-bottom: 1px solid #111;
   }
