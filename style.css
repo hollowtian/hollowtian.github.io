@@ -1,6 +1,5 @@
 /* =========================================================
-   HAOTIAN ZHANG
-   GLOBAL STYLES
+   HAOTIAN ZHANG — GLOBAL STYLES
    ========================================================= */
 
 
@@ -37,7 +36,7 @@ img {
 
 
 /* -----------------------------
-   PAGE
+   GLOBAL PAGE
 ----------------------------- */
 
 .page {
@@ -46,11 +45,6 @@ img {
   margin: 0 auto;
   padding: 0 clamp(20px, 1.7vw, 36px);
 }
-
-
-/* -----------------------------
-   TYPOGRAPHY
------------------------------ */
 
 .label {
   font-size: 10px;
@@ -116,6 +110,664 @@ nav a:hover::after {
 
 
 /* -----------------------------
+   GENERIC PAGE TITLE
+----------------------------- */
+
+.page-title {
+  padding: 30px 0 90px;
+}
+
+.page-title h1 {
+  font-size: clamp(72px, 10vw, 170px);
+  line-height: 0.84;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+/* -----------------------------
+   GENERIC SECTION HEADING
+----------------------------- */
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: baseline;
+  padding: 18px 0;
+  border-top: 1px solid #111;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+
+/* -----------------------------
+   HOMEPAGE HERO
+----------------------------- */
+
+.hero {
+  min-height: 76vh;
+  display: grid;
+  grid-template-columns: 4.7fr 7.3fr;
+  gap: 40px;
+  padding-top: 28px;
+  padding-bottom: 32px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-title {
+  font-size: clamp(68px, 8.4vw, 150px);
+  line-height: 0.82;
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  text-transform: uppercase;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 420px;
+}
+
+.hero-image {
+  background: #d8d8d3;
+  min-height: 650px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image::after {
+  content: "FEATURED IMAGE";
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+
+/* -----------------------------
+   HOMEPAGE PROJECT GRID
+----------------------------- */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding-bottom: 100px;
+}
+
+.project {
+  margin-bottom: 44px;
+}
+
+.project:nth-child(1) {
+  grid-column: span 7;
+}
+
+.project:nth-child(2) {
+  grid-column: span 5;
+  padding-top: 140px;
+}
+
+.project:nth-child(3) {
+  grid-column: span 5;
+}
+
+.project:nth-child(4) {
+  grid-column: span 7;
+  padding-top: 70px;
+}
+
+.project:nth-child(5) {
+  grid-column: 3 / span 8;
+  padding-top: 40px;
+}
+
+.project-image {
+  aspect-ratio: 4 / 3;
+  background: #d2d2cd;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.project:nth-child(2) .project-image,
+.project:nth-child(3) .project-image {
+  aspect-ratio: 3 / 4;
+}
+
+.project-image::after {
+  content: "IMAGE";
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.project-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+}
+
+.project-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.project-meta {
+  margin-top: 5px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.project-number {
+  font-size: 11px;
+}
+
+
+/* -----------------------------
+   HOMEPAGE JOURNAL
+----------------------------- */
+
+.journal {
+  padding-bottom: 110px;
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #111;
+}
+
+.journal-item {
+  min-height: 185px;
+  padding: 14px;
+  border-right: 1px solid #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.2s ease;
+}
+
+.journal-item:first-child {
+  border-left: 1px solid #111;
+}
+
+.journal-item:hover {
+  background: #111;
+  color: #f7f7f5;
+}
+
+.journal-number {
+  font-size: 10px;
+}
+
+.journal-name {
+  font-size: 22px;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+
+/* -----------------------------
+   HOMEPAGE ABOUT
+----------------------------- */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 18px 0 120px;
+  border-top: 1px solid #111;
+}
+
+.about-title {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.about-text {
+  font-size: clamp(24px, 2.25vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  max-width: 820px;
+}
+
+
+/* -----------------------------
+   GENERIC INTRO LAYOUT
+----------------------------- */
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  padding: 24px 0 100px;
+  border-top: 1px solid #111;
+}
+
+.intro-text {
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  max-width: 1000px;
+}
+
+
+/* -----------------------------
+   ABOUT PAGE
+----------------------------- */
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 30px 0 100px;
+  border-top: 1px solid #111;
+}
+
+.detail-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.detail-text {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.bio {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 70px;
+  padding: 30px 0 120px;
+  border-top: 1px solid #111;
+}
+
+.bio-title {
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+
+.bio-text {
+  max-width: 850px;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.bio-text p {
+  margin-bottom: 24px;
+}
+
+.interests {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #111;
+  margin-bottom: 120px;
+}
+
+.interest {
+  min-height: 180px;
+  padding: 14px;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+  display: flex;
+  align-items: flex-end;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.interest:first-child {
+  border-left: 1px solid #111;
+}
+
+
+/* -----------------------------
+   CV PAGE
+----------------------------- */
+
+.cv-section {
+  border-top: 1px solid #111;
+  padding: 18px 0 90px;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 3fr;
+  gap: 30px;
+  padding: 22px 0;
+  border-top: 1px solid #c8c8c3;
+}
+
+.entry:last-child {
+  border-bottom: 1px solid #c8c8c3;
+}
+
+.date {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.entry-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.entry-subtitle {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.entry-description {
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 760px;
+}
+
+.skills-grid,
+.additional-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.skill-group,
+.additional-block {
+  border-top: 1px solid #c8c8c3;
+  padding-top: 14px;
+}
+
+.skill-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: -0.025em;
+}
+
+.skill-list,
+.additional-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.additional-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+
+/* -----------------------------
+   PROJECT INDEX
+----------------------------- */
+
+.project-table {
+  border-top: 1px solid #111;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 50px 120px 2fr 1.4fr 1fr 1.2fr;
+  gap: 18px;
+  align-items: center;
+  min-height: 108px;
+  padding: 12px 0;
+  border-bottom: 1px solid #c9c9c4;
+  transition: background 0.2s ease;
+}
+
+.project-row:hover {
+  background: #efefeb;
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #d2d2cd;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-thumb::after {
+  content: "THUMB";
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.note {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 12px;
+  max-width: 700px;
+}
+
+
+/* -----------------------------
+   JOURNAL PAGE
+----------------------------- */
+
+.categories {
+  border-top: 1px solid #111;
+  margin-bottom: 120px;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 70px 1.5fr 2fr auto;
+  gap: 30px;
+  align-items: center;
+  min-height: 125px;
+  border-bottom: 1px solid #bdbdb8;
+  transition: background 0.2s ease;
+}
+
+.category:hover {
+  background: #111;
+  color: #f7f7f5;
+}
+
+.category-number {
+  font-size: 11px;
+}
+
+.category-name {
+  font-size: clamp(28px, 3vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+.category-description {
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 440px;
+}
+
+.category-arrow {
+  font-size: 18px;
+}
+
+.latest {
+  margin-bottom: 120px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.post-image {
+  aspect-ratio: 4 / 3;
+  background: #d2d2cd;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.post-image::after {
+  content: "IMAGE";
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.post-category {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 7px;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.post-date {
+  margin-top: 8px;
+  font-size: 10px;
+  color: #666;
+}
+
+
+/* -----------------------------
+   PROJECT DETAIL PAGE
+----------------------------- */
+
+.project-header {
+  padding: 28px 0 60px;
+}
+
+.project-header .project-number {
+  margin-bottom: 20px;
+}
+
+.project-header h1 {
+  font-size: clamp(70px, 10vw, 170px);
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 1400px;
+}
+
+.project-detail-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 20px 0 80px;
+  border-top: 1px solid #111;
+}
+
+.info-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.info-text {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.project-detail-hero {
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+  background: #d2d2cd;
+  position: relative;
+}
+
+.project-detail-hero::after {
+  content: "PROJECT IMAGE";
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  padding: 80px 0 120px;
+}
+
+.description-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.description-text {
+  font-size: clamp(26px, 3vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  max-width: 1000px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-bottom: 120px;
+}
+
+.image-placeholder {
+  background: #d2d2cd;
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+.image-placeholder.tall {
+  aspect-ratio: 3 / 4;
+}
+
+.image-placeholder::after {
+  content: "IMAGE";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+
+/* -----------------------------
    FOOTER
 ----------------------------- */
 
@@ -165,6 +817,117 @@ footer a:hover::after {
   nav {
     gap: 18px;
     flex-wrap: wrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 20vw;
+  }
+
+  .hero-image {
+    min-height: 70vh;
+  }
+
+  .hero-info {
+    margin-top: 50px;
+  }
+
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .projects {
+    display: block;
+  }
+
+  .project,
+  .project:nth-child(1),
+  .project:nth-child(2),
+  .project:nth-child(3),
+  .project:nth-child(4),
+  .project:nth-child(5) {
+    padding-top: 0;
+    margin-bottom: 60px;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-item {
+    min-height: 120px;
+    border-left: 1px solid #111;
+    border-bottom: 1px solid #111;
+  }
+
+  .about,
+  .intro,
+  .bio,
+  .description {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .details,
+  .skills-grid,
+  .additional-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interests {
+    grid-template-columns: 1fr;
+  }
+
+  .interest {
+    min-height: 100px;
+    border-left: 1px solid #111;
+  }
+
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .project-row {
+    grid-template-columns: 40px 90px 1fr;
+    gap: 12px;
+    padding: 16px 0;
+    min-height: auto;
+  }
+
+  .project-location,
+  .project-type,
+  .project-office {
+    grid-column: 3;
+  }
+
+  .category {
+    grid-template-columns: 40px 1fr auto;
+    gap: 12px;
+    padding: 18px 0;
+  }
+
+  .category-description {
+    grid-column: 2 / 4;
+  }
+
+  .post-grid,
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-detail-hero {
+    height: 60vh;
+    min-height: 400px;
   }
 
 }
