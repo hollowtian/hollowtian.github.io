@@ -3,12 +3,665 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Haotian Zhang — Architect / Designer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f7f7f5;
+      color: #111111;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* -----------------------------
+       GLOBAL
+    ----------------------------- */
+
+    .page {
+      width: 100%;
+      padding: 0 32px;
+    }
+
+    .label {
+      font-size: 11px;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .small-text {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: #111;
+    }
+
+    /* -----------------------------
+       HEADER
+    ----------------------------- */
+
+    header {
+      height: 72px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      border-bottom: 1px solid #111;
+    }
+
+    .site-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 12px;
+    }
+
+    nav a {
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: #111;
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* -----------------------------
+       HERO
+    ----------------------------- */
+
+    .hero {
+      min-height: 76vh;
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 32px;
+      padding-top: 28px;
+      padding-bottom: 32px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-title {
+      font-size: clamp(72px, 10vw, 180px);
+      line-height: 0.82;
+      font-weight: 700;
+      letter-spacing: -0.075em;
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 420px;
+    }
+
+    .hero-image {
+      background: #d8d8d3;
+      min-height: 650px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::after {
+      content: "FEATURED IMAGE";
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    /* -----------------------------
+       SECTION HEADER
+    ----------------------------- */
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      align-items: baseline;
+      padding: 18px 0;
+      border-top: 1px solid #111;
+    }
+
+    .section-title {
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.035em;
+    }
+
+    /* -----------------------------
+       PROJECT GRID
+    ----------------------------- */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      padding-bottom: 100px;
+    }
+
+    .project {
+      margin-bottom: 44px;
+    }
+
+    .project:nth-child(1) {
+      grid-column: span 7;
+    }
+
+    .project:nth-child(2) {
+      grid-column: span 5;
+      padding-top: 140px;
+    }
+
+    .project:nth-child(3) {
+      grid-column: span 5;
+    }
+
+    .project:nth-child(4) {
+      grid-column: span 7;
+      padding-top: 70px;
+    }
+
+    .project-image {
+      aspect-ratio: 4 / 3;
+      background: #d2d2cd;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .project:nth-child(2) .project-image,
+    .project:nth-child(3) .project-image {
+      aspect-ratio: 3 / 4;
+    }
+
+    .project-image::after {
+      content: "IMAGE";
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    .project-info {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+    }
+
+    .project-name {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      margin-top: 5px;
+      font-size: 11px;
+      line-height: 1.4;
+      color: #555;
+    }
+
+    .project-number {
+      font-size: 11px;
+    }
+
+    /* -----------------------------
+       JOURNAL
+    ----------------------------- */
+
+    .journal {
+      padding-bottom: 110px;
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #111;
+    }
+
+    .journal-item {
+      min-height: 220px;
+      padding: 14px;
+      border-right: 1px solid #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.2s ease;
+    }
+
+    .journal-item:first-child {
+      border-left: 1px solid #111;
+    }
+
+    .journal-item:hover {
+      background: #111;
+      color: #f7f7f5;
+    }
+
+    .journal-number {
+      font-size: 10px;
+    }
+
+    .journal-name {
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+    }
+
+    /* -----------------------------
+       ABOUT
+    ----------------------------- */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      padding: 18px 0 120px;
+      border-top: 1px solid #111;
+    }
+
+    .about-title {
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .about-text {
+      font-size: clamp(24px, 2.6vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    /* -----------------------------
+       FOOTER
+    ----------------------------- */
+
+    footer {
+      min-height: 220px;
+      padding: 18px 0 28px;
+      border-top: 1px solid #111;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      align-content: space-between;
+    }
+
+    .footer-name {
+      font-size: clamp(42px, 6vw, 90px);
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      line-height: 0.9;
+    }
+
+    .footer-column {
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .copyright {
+      grid-column: 1 / -1;
+      margin-top: 80px;
+      font-size: 10px;
+    }
+
+    /* -----------------------------
+       MOBILE
+    ----------------------------- */
+
+    @media (max-width: 900px) {
+
+      .page {
+        padding: 0 16px;
+      }
+
+      header {
+        height: auto;
+        padding: 18px 0;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      nav {
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-title {
+        font-size: 20vw;
+      }
+
+      .hero-image {
+        min-height: 70vh;
+      }
+
+      .hero-info {
+        margin-top: 50px;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .projects {
+        display: block;
+      }
+
+      .project,
+      .project:nth-child(1),
+      .project:nth-child(2),
+      .project:nth-child(3),
+      .project:nth-child(4) {
+        padding-top: 0;
+        margin-bottom: 60px;
+      }
+
+      .journal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journal-item {
+        min-height: 120px;
+        border-left: 1px solid #111;
+        border-bottom: 1px solid #111;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      footer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
-  <h1>Haotian Zhang</h1>
-  <p>Architect / Designer</p>
-  <p>Portfolio coming soon.</p>
+
+  <div class="page">
+
+    <!-- HEADER -->
+
+    <header>
+      <a class="site-name" href="#">HAOTIAN ZHANG</a>
+
+      <nav>
+        <a href="#work">WORK</a>
+        <a href="#journal">JOURNAL</a>
+        <a href="#about">ABOUT</a>
+        <a href="#">CV ↗</a>
+      </nav>
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+      <section class="hero">
+
+        <div class="hero-left">
+
+          <h1 class="hero-title">
+            <span>HAOTIAN</span>
+            <span>ZHANG</span>
+          </h1>
+
+          <div class="hero-info">
+
+            <div>
+              <div class="label">Practice</div>
+              <div class="small-text" style="margin-top:8px;">
+                Architecture<br>
+                Design<br>
+                New York
+              </div>
+            </div>
+
+            <div>
+              <div class="label">About</div>
+              <div class="small-text" style="margin-top:8px;">
+                Architect and designer working across buildings, objects,
+                photography and visual culture.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="hero-image"></div>
+
+      </section>
+
+
+      <!-- WORK -->
+
+      <section id="work">
+
+        <div class="section-heading">
+          <div class="label">Selected Work</div>
+          <h2 class="section-title">Architecture</h2>
+        </div>
+
+        <div class="projects">
+
+          <article class="project">
+            <div class="project-image"></div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-name">MetPark</div>
+                <div class="project-meta">
+                  Flushing, New York<br>
+                  Architecture
+                </div>
+              </div>
+
+              <div class="project-number">01</div>
+            </div>
+          </article>
+
+
+          <article class="project">
+            <div class="project-image"></div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-name">95 Columbus</div>
+                <div class="project-meta">
+                  Jersey City, New Jersey<br>
+                  Architecture
+                </div>
+              </div>
+
+              <div class="project-number">02</div>
+            </div>
+          </article>
+
+
+          <article class="project">
+            <div class="project-image"></div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-name">C23</div>
+                <div class="project-meta">
+                  New York<br>
+                  Architecture
+                </div>
+              </div>
+
+              <div class="project-number">03</div>
+            </div>
+          </article>
+
+
+          <article class="project">
+            <div class="project-image"></div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-name">Wide Horizon</div>
+                <div class="project-meta">
+                  Architecture / Design
+                </div>
+              </div>
+
+              <div class="project-number">04</div>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- JOURNAL -->
+
+      <section class="journal" id="journal">
+
+        <div class="section-heading">
+          <div class="label">Journal</div>
+          <h2 class="section-title">
+            Notes, Images & Observations
+          </h2>
+        </div>
+
+        <div class="journal-grid">
+
+          <a class="journal-item" href="#">
+            <span class="journal-number">01</span>
+            <span class="journal-name">Architecture</span>
+          </a>
+
+          <a class="journal-item" href="#">
+            <span class="journal-number">02</span>
+            <span class="journal-name">Cars</span>
+          </a>
+
+          <a class="journal-item" href="#">
+            <span class="journal-number">03</span>
+            <span class="journal-name">Photography</span>
+          </a>
+
+          <a class="journal-item" href="#">
+            <span class="journal-number">04</span>
+            <span class="journal-name">Objects</span>
+          </a>
+
+          <a class="journal-item" href="#">
+            <span class="journal-number">05</span>
+            <span class="journal-name">Places</span>
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- ABOUT -->
+
+      <section class="about" id="about">
+
+        <div class="about-title">
+          About
+        </div>
+
+        <div class="about-text">
+          Haotian Zhang is an architect and designer based in New York,
+          interested in architecture, cities, objects, machines,
+          photography and the culture surrounding them.
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <div class="footer-name">
+        HAOTIAN<br>
+        ZHANG
+      </div>
+
+      <div class="footer-column">
+        NEW YORK<br>
+        USA
+      </div>
+
+      <div class="footer-column">
+        EMAIL<br>
+        INSTAGRAM<br>
+        LINKEDIN
+      </div>
+
+      <div class="copyright">
+        © 2026 HAOTIAN ZHANG
+      </div>
+
+    </footer>
+
+  </div>
+
 </body>
 </html>
