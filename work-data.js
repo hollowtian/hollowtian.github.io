@@ -268,7 +268,7 @@ const WORKS = {
 
 
 
-  /* =====================================================
+    /* =====================================================
      04 — LUXELAKE C23
      ===================================================== */
 
@@ -291,18 +291,30 @@ const WORKS = {
     status: "—",
 
 
+    /* PROJECT INDEX
+       Small 4:3 thumbnail.
+       Slightly left of center keeps the main tower group
+       visually balanced.
+    */
+
     category: "professional",
 
     index: {
 
       show: true,
 
-      image: null,
+      image:
+        "images/projects/luxelake-c23/01-hero.jpg",
 
-      position: "50% 50%"
+      position:
+        "48% 50%"
 
     },
 
+
+    /* HOMEPAGE
+       Landscape card in the right column.
+    */
 
     featured: true,
 
@@ -314,36 +326,55 @@ const WORKS = {
 
       size: "full",
 
-      image: null,
+      image:
+        "images/projects/luxelake-c23/01-hero.jpg",
 
-      position: "50% 50%"
+      position:
+        "48% 50%"
 
     },
 
+
+    /* PROJECT DETAIL PAGE */
 
     page: true,
 
 
     description: [
 
-      "Luxelake C23 is a residential project in Chengdu, China.",
+      "Luxelake C23 is a residential development in Chengdu, China.",
 
-      "Project description and design narrative will be added here."
+      "Project description and design narrative will be added here. This section can describe the project's urban strategy, residential massing, facade articulation, material expression and relationship to the surrounding landscape."
 
     ],
 
 
+    /* HERO
+       Project page uses a 4:3 crop.
+       The original image has enough width for this crop.
+    */
+
     hero: {
 
-      image: null,
+      image:
+        "images/projects/luxelake-c23/01-hero.jpg",
 
-      position: "50% 50%"
+      position:
+        "48% 50%"
 
     },
 
 
-    gallery: [],
+    /* GALLERY
+       Add project images here later.
+    */
 
+    gallery: [
+
+    ],
+
+
+    /* PROJECT NAVIGATION */
 
     previous: "southside-park",
 
