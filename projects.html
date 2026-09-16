@@ -57,6 +57,7 @@
       line-height: 0.84;
       letter-spacing: -0.07em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .section {
@@ -88,17 +89,18 @@
 
     .project-row {
       display: grid;
-      grid-template-columns: 60px 2fr 1.3fr 1.2fr 1.2fr;
-      gap: 20px;
+      grid-template-columns: 50px 120px 2fr 1.4fr 1fr 1.2fr;
+      gap: 18px;
       align-items: center;
-      min-height: 72px;
-      border-bottom: 1px solid #bdbdb8;
+      min-height: 108px;
+      padding: 12px 0;
+      border-bottom: 1px solid #c9c9c4;
       transition: background 0.2s ease;
     }
 
+    a.project-row:hover,
     .project-row:hover {
-      background: #111;
-      color: #f7f7f5;
+      background: #efefeb;
     }
 
     .project-number,
@@ -110,9 +112,34 @@
     }
 
     .project-name {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       letter-spacing: -0.03em;
+    }
+
+    .project-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #d2d2cd;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb::after {
+      content: "THUMB";
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+    }
+
+    .note {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #555;
+      margin-top: 12px;
+      max-width: 700px;
     }
 
     footer {
@@ -124,7 +151,6 @@
     }
 
     @media (max-width: 900px) {
-
       .page {
         padding: 0 16px;
       }
@@ -147,19 +173,25 @@
       }
 
       .project-row {
-        grid-template-columns: 40px 1fr;
-        gap: 10px;
+        grid-template-columns: 40px 90px 1fr;
+        gap: 12px;
         padding: 16px 0;
+        min-height: auto;
       }
 
       .project-location,
       .project-type,
       .project-office {
-        grid-column: 2;
+        grid-column: 3;
       }
 
       .project-name {
         font-size: 18px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 16px;
       }
     }
   </style>
@@ -170,7 +202,6 @@
   <div class="page">
 
     <header>
-
       <a class="site-name" href="index.html">
         HAOTIAN ZHANG
       </a>
@@ -182,21 +213,19 @@
         <a href="index.html#about">ABOUT</a>
         <a href="#">CV ↗</a>
       </nav>
-
     </header>
-
 
     <main>
 
       <section class="page-title">
-
         <h1>
           Project<br>
           Index
         </h1>
-
       </section>
 
+
+      <!-- PROFESSIONAL WORK -->
 
       <section class="section">
 
@@ -206,15 +235,15 @@
           </div>
 
           <div class="section-title">
-            Selected Architecture
+            Architecture / Built Work / Practice
           </div>
         </div>
-
 
         <div class="project-table">
 
           <a class="project-row" href="metropolitan-park.html">
             <div class="project-number">01</div>
+            <div class="project-thumb"></div>
             <div class="project-name">Metropolitan Park</div>
             <div class="project-location">Queens, New York</div>
             <div class="project-type">Mixed-Use</div>
@@ -223,6 +252,7 @@
 
           <div class="project-row">
             <div class="project-number">02</div>
+            <div class="project-thumb"></div>
             <div class="project-name">Yu Qingli Tower</div>
             <div class="project-location">Shanghai, China</div>
             <div class="project-type">High-Rise</div>
@@ -231,6 +261,7 @@
 
           <div class="project-row">
             <div class="project-number">03</div>
+            <div class="project-thumb"></div>
             <div class="project-name">1 Southside Park</div>
             <div class="project-location">Miami, Florida</div>
             <div class="project-type">Mixed-Use</div>
@@ -239,6 +270,7 @@
 
           <div class="project-row">
             <div class="project-number">04</div>
+            <div class="project-thumb"></div>
             <div class="project-name">Luxelake C23</div>
             <div class="project-location">Chengdu, China</div>
             <div class="project-type">Residential</div>
@@ -247,34 +279,16 @@
 
           <div class="project-row">
             <div class="project-number">05</div>
+            <div class="project-thumb"></div>
             <div class="project-name">Building 140</div>
             <div class="project-location">Governors Island, New York</div>
             <div class="project-type">Adaptive Reuse</div>
             <div class="project-office">SHoP Architects</div>
           </div>
 
-        </div>
-
-      </section>
-
-
-      <section class="section">
-
-        <div class="section-heading">
-          <div class="section-label">
-            Earlier Work
-          </div>
-
-          <div class="section-title">
-            Education
-          </div>
-        </div>
-
-
-        <div class="project-table">
-
           <div class="project-row">
             <div class="project-number">06</div>
+            <div class="project-thumb"></div>
             <div class="project-name">Smothers Elementary School</div>
             <div class="project-location">Washington, DC</div>
             <div class="project-type">Education</div>
@@ -283,6 +297,7 @@
 
           <div class="project-row">
             <div class="project-number">07</div>
+            <div class="project-thumb"></div>
             <div class="project-name">South Lake Elementary School</div>
             <div class="project-location">Maryland</div>
             <div class="project-type">Education</div>
@@ -293,19 +308,63 @@
 
       </section>
 
+
+      <!-- ACADEMIC WORK -->
+
+      <section class="section">
+
+        <div class="section-heading">
+          <div class="section-label">
+            Student Work
+          </div>
+
+          <div class="section-title">
+            Academic Projects
+          </div>
+        </div>
+
+        <div class="project-table">
+
+          <div class="project-row">
+            <div class="project-number">08</div>
+            <div class="project-thumb"></div>
+            <div class="project-name">Academic Project 01</div>
+            <div class="project-location">Cornell University</div>
+            <div class="project-type">Studio</div>
+            <div class="project-office">2019–2020</div>
+          </div>
+
+          <div class="project-row">
+            <div class="project-number">09</div>
+            <div class="project-thumb"></div>
+            <div class="project-name">Academic Project 02</div>
+            <div class="project-location">Pratt Institute</div>
+            <div class="project-type">Studio</div>
+            <div class="project-office">2014–2019</div>
+          </div>
+
+          <div class="project-row">
+            <div class="project-number">10</div>
+            <div class="project-thumb"></div>
+            <div class="project-name">Thesis / Independent Work</div>
+            <div class="project-location">Academic</div>
+            <div class="project-type">Research</div>
+            <div class="project-office">Student Work</div>
+          </div>
+
+        </div>
+
+        <div class="note">
+          Replace these placeholders later with the actual names of your strongest student projects.
+        </div>
+
+      </section>
+
     </main>
 
-
     <footer>
-
-      <div>
-        © 2026 HAOTIAN ZHANG
-      </div>
-
-      <a href="index.html">
-        ← HOME
-      </a>
-
+      <div>© 2026 HAOTIAN ZHANG</div>
+      <a href="index.html">← HOME</a>
     </footer>
 
   </div>
