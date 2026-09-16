@@ -199,7 +199,7 @@ img {
 
 .home-work-layout {
   display: grid;
-  grid-template-columns: 7fr 5fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: 24px;
   padding-bottom: 100px;
 }
@@ -208,6 +208,29 @@ img {
   display: flex;
   flex-direction: column;
   gap: 44px;
+}
+
+/* LEFT COLUMN */
+
+.home-work-column:first-child .home-work-card:nth-child(1) {
+  width: 100%;
+}
+
+.home-work-column:first-child .home-work-card:nth-child(2) {
+  width: 72%;
+  align-self: flex-start;
+}
+
+
+/* RIGHT COLUMN */
+
+.home-work-column:nth-child(2) .home-work-card:nth-child(1) {
+  width: 72%;
+  align-self: flex-end;
+}
+
+.home-work-column:nth-child(2) .home-work-card:nth-child(2) {
+  width: 100%;
 }
 
 .home-work-card {
