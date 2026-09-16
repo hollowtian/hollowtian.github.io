@@ -188,7 +188,8 @@ img {
 .home-work-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 8px;
   padding-bottom: 100px;
   align-items: start;
 }
