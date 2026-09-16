@@ -1,307 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Project Index — Haotian Zhang</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #f7f7f5;
-      color: #111;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      padding: 0 32px;
-    }
-
-    header {
-      height: 72px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      border-bottom: 1px solid #111;
-    }
-
-    .site-name {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      font-size: 12px;
-    }
-
-    .page-title {
-      padding: 30px 0 90px;
-    }
-
-    h1 {
-      font-size: clamp(72px, 10vw, 170px);
-      line-height: 0.84;
-      letter-spacing: -0.07em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .section {
-      margin-bottom: 100px;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      padding: 18px 0;
-      border-top: 1px solid #111;
-      align-items: baseline;
-    }
-
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      font-size: 30px;
-      letter-spacing: -0.04em;
-    }
-
-    .project-table {
-      border-top: 1px solid #111;
-    }
-
-    .project-row {
-      display: grid;
-      grid-template-columns: 50px 120px 2fr 1.4fr 1fr 1.2fr;
-      gap: 18px;
-      align-items: center;
-      min-height: 108px;
-      padding: 12px 0;
-      border-bottom: 1px solid #c9c9c4;
-      transition: background 0.2s ease;
-    }
-
-    a.project-row:hover,
-    .project-row:hover {
-      background: #efefeb;
-    }
-
-    .project-number,
-    .project-location,
-    .project-type,
-    .project-office {
-      font-size: 11px;
-      line-height: 1.4;
-    }
-
-    .project-name {
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
-
-    .project-thumb {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #d2d2cd;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-thumb::after {
-      content: "THUMB";
-      position: absolute;
-      left: 8px;
-      bottom: 8px;
-      font-size: 9px;
-      letter-spacing: 0.08em;
-    }
-
-    .note {
-      font-size: 12px;
-      line-height: 1.5;
-      color: #555;
-      margin-top: 12px;
-      max-width: 700px;
-    }
-
-    footer {
-      border-top: 1px solid #111;
-      padding: 18px 0 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-    }
-
-    @media (max-width: 900px) {
-      .page {
-        padding: 0 16px;
-      }
-
-      header {
-        height: auto;
-        padding: 18px 0;
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      nav {
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      .section-heading {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .project-row {
-        grid-template-columns: 40px 90px 1fr;
-        gap: 12px;
-        padding: 16px 0;
-        min-height: auto;
-      }
-
-      .project-location,
-      .project-type,
-      .project-office {
-        grid-column: 3;
-      }
-
-      .project-name {
-        font-size: 18px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 16px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <div class="page">
 
-    <header>
+    <header class="site-header">
+
       <a class="site-name" href="index.html">
         HAOTIAN ZHANG
       </a>
 
-      <nav>
+      <nav class="site-nav">
         <a href="index.html#work">WORK</a>
         <a href="projects.html">PROJECT INDEX</a>
         <a href="journal.html">JOURNAL</a>
         <a href="about.html">ABOUT</a>
         <a href="cv.html">CV</a>
       </nav>
+
     </header>
+
 
     <main>
 
       <section class="page-title">
+
         <h1>
           Project<br>
           Index
         </h1>
+
       </section>
 
 
-      <!-- PROFESSIONAL WORK -->
-
-      <section class="section">
+      <section class="project-index-section">
 
         <div class="section-heading">
-          <div class="section-label">
+
+          <div class="label">
             Professional Work
           </div>
 
           <div class="section-title">
-            Architecture / Built Work / Practice
+            Architecture / Practice
           </div>
+
         </div>
 
-        <div class="project-table">
 
-          <a class="project-row" href="metropolitan-park.html">
-            <div class="project-number">01</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Metropolitan Park</div>
-            <div class="project-location">Queens, New York</div>
-            <div class="project-type">Mixed-Use</div>
-            <div class="project-office">SHoP Architects</div>
+        <div class="project-index-table">
+
+
+          <a class="project-index-row"
+             href="metropolitan-park.html">
+
+            <div class="project-index-number">01</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              Metropolitan Park
+            </div>
+
+            <div class="project-index-location">
+              Queens, New York
+            </div>
+
+            <div class="project-index-type">
+              Mixed-Use
+            </div>
+
+            <div class="project-index-office">
+              SHoP Architects
+            </div>
+
           </a>
 
-          <div class="project-row">
-            <div class="project-number">02</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Yu Qingli Tower</div>
-            <div class="project-location">Shanghai, China</div>
-            <div class="project-type">High-Rise</div>
-            <div class="project-office">SHoP Architects</div>
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">02</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              Yu Qingli Tower
+            </div>
+
+            <div class="project-index-location">
+              Shanghai, China
+            </div>
+
+            <div class="project-index-type">
+              High-Rise
+            </div>
+
+            <div class="project-index-office">
+              SHoP Architects
+            </div>
+
           </div>
 
-          <div class="project-row">
-            <div class="project-number">03</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">1 Southside Park</div>
-            <div class="project-location">Miami, Florida</div>
-            <div class="project-type">Mixed-Use</div>
-            <div class="project-office">SHoP Architects</div>
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">03</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              1 Southside Park
+            </div>
+
+            <div class="project-index-location">
+              Miami, Florida
+            </div>
+
+            <div class="project-index-type">
+              Mixed-Use
+            </div>
+
+            <div class="project-index-office">
+              SHoP Architects
+            </div>
+
           </div>
 
-          <div class="project-row">
-            <div class="project-number">04</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Luxelake C23</div>
-            <div class="project-location">Chengdu, China</div>
-            <div class="project-type">Residential</div>
-            <div class="project-office">SHoP Architects</div>
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">04</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              Luxelake C23
+            </div>
+
+            <div class="project-index-location">
+              Chengdu, China
+            </div>
+
+            <div class="project-index-type">
+              Residential
+            </div>
+
+            <div class="project-index-office">
+              SHoP Architects
+            </div>
+
           </div>
 
-          <div class="project-row">
-            <div class="project-number">05</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Building 140</div>
-            <div class="project-location">Governors Island, New York</div>
-            <div class="project-type">Adaptive Reuse</div>
-            <div class="project-office">SHoP Architects</div>
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">05</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              Building 140
+            </div>
+
+            <div class="project-index-location">
+              Governors Island, New York
+            </div>
+
+            <div class="project-index-type">
+              Adaptive Reuse
+            </div>
+
+            <div class="project-index-office">
+              SHoP Architects
+            </div>
+
           </div>
 
-          <div class="project-row">
-            <div class="project-number">06</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Smothers Elementary School</div>
-            <div class="project-location">Washington, DC</div>
-            <div class="project-type">Education</div>
-            <div class="project-office">DLR Group</div>
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">06</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              Smothers Elementary School
+            </div>
+
+            <div class="project-index-location">
+              Washington, DC
+            </div>
+
+            <div class="project-index-type">
+              Education
+            </div>
+
+            <div class="project-index-office">
+              DLR Group
+            </div>
+
           </div>
 
-          <div class="project-row">
-            <div class="project-number">07</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">South Lake Elementary School</div>
-            <div class="project-location">Maryland</div>
-            <div class="project-type">Education</div>
-            <div class="project-office">DLR Group</div>
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">07</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              South Lake Elementary School
+            </div>
+
+            <div class="project-index-location">
+              Maryland
+            </div>
+
+            <div class="project-index-type">
+              Education
+            </div>
+
+            <div class="project-index-office">
+              DLR Group
+            </div>
+
           </div>
 
         </div>
@@ -309,62 +241,94 @@
       </section>
 
 
-      <!-- ACADEMIC WORK -->
-
-      <section class="section">
+      <section class="project-index-section">
 
         <div class="section-heading">
-          <div class="section-label">
+
+          <div class="label">
             Student Work
           </div>
 
           <div class="section-title">
             Academic Projects
           </div>
-        </div>
-
-        <div class="project-table">
-
-          <div class="project-row">
-            <div class="project-number">08</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Academic Project 01</div>
-            <div class="project-location">Cornell University</div>
-            <div class="project-type">Studio</div>
-            <div class="project-office">2019–2020</div>
-          </div>
-
-          <div class="project-row">
-            <div class="project-number">09</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Academic Project 02</div>
-            <div class="project-location">Pratt Institute</div>
-            <div class="project-type">Studio</div>
-            <div class="project-office">2014–2019</div>
-          </div>
-
-          <div class="project-row">
-            <div class="project-number">10</div>
-            <div class="project-thumb"></div>
-            <div class="project-name">Thesis / Independent Work</div>
-            <div class="project-location">Academic</div>
-            <div class="project-type">Research</div>
-            <div class="project-office">Student Work</div>
-          </div>
 
         </div>
 
-        <div class="note">
-          Replace these placeholders later with the actual names of your strongest student projects.
+
+        <div class="project-index-table">
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">08</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              Academic Project 01
+            </div>
+
+            <div class="project-index-location">
+              Cornell University
+            </div>
+
+            <div class="project-index-type">
+              Studio
+            </div>
+
+            <div class="project-index-office">
+              Academic
+            </div>
+
+          </div>
+
+
+          <div class="project-index-row">
+
+            <div class="project-index-number">09</div>
+
+            <div class="project-index-thumb"></div>
+
+            <div class="project-index-name">
+              Academic Project 02
+            </div>
+
+            <div class="project-index-location">
+              Pratt Institute
+            </div>
+
+            <div class="project-index-type">
+              Studio
+            </div>
+
+            <div class="project-index-office">
+              Academic
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-index-note">
+          Student work will be replaced with selected academic projects.
         </div>
 
       </section>
 
     </main>
 
-    <footer>
-      <div>© 2026 HAOTIAN ZHANG</div>
-      <a href="index.html">← HOME</a>
+
+    <footer class="site-footer">
+
+      <div>
+        © 2026 HAOTIAN ZHANG
+      </div>
+
+      <a href="index.html">
+        ← HOME
+      </a>
+
     </footer>
 
   </div>
