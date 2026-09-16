@@ -26,22 +26,22 @@ const JOURNAL_CATEGORIES = {
   },
 
 
-"automobile": {
+  "automobile": {
 
-  number: "02",
+    number: "02",
 
-  title: "Automobile",
+    title: "Automobile",
 
-  description:
-    "Cars, driving, engineering, design and the culture surrounding the automobile.",
+    description:
+      "Cars, driving, engineering, design and the culture surrounding the automobile.",
 
-  image:
-    "images/journal/automobile.jpg",
+    image:
+      "images/journal/automobile.jpg",
 
-  position:
-    "50% 50%"
+    position:
+      "50% 50%"
 
-},
+  },
 
 
   "photography": {
@@ -104,7 +104,6 @@ const JOURNAL_POSTS = {
 
   /* =====================================================
      TEST ENTRY
-     Keep published: false until you want to test it.
      ===================================================== */
 
   "journal-test": {
