@@ -8,30 +8,86 @@ const WORKS = {
   "metropolitan-park": {
 
     number: "01",
+
     title: "Metropolitan Park",
 
     location: "Queens, New York",
+
     typology: "Mixed-Use",
+
     office: "SHoP Architects",
+
     role: "Architect / Designer",
 
     year: "—",
+
     status: "—",
 
+
+    /* PROJECT INDEX */
+
+    category: "professional",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    /* HOMEPAGE */
+
+    featured: true,
+
+    home: {
+
+      column: "left",
+
+      ratio: "landscape",
+
+      size: "full",
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    /* PROJECT PAGE */
+
+    page: true,
+
+
     description: [
+
       "Metropolitan Park is a mixed-use development in Queens, New York.",
+
       "Project description and design narrative will be added here."
+
     ],
 
+
     hero: {
+
       image: null,
+
       position: "50% 50%"
+
     },
+
 
     gallery: [],
 
+
     previous: null,
+
     next: "yu-qingli"
+
   },
 
 
@@ -43,30 +99,80 @@ const WORKS = {
   "yu-qingli": {
 
     number: "02",
+
     title: "Yu Qingli Tower",
 
     location: "Shanghai, China",
+
     typology: "High-Rise",
+
     office: "SHoP Architects",
+
     role: "Architect / Designer",
 
     year: "—",
+
     status: "—",
 
+
+    category: "professional",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    featured: true,
+
+    home: {
+
+      column: "right",
+
+      ratio: "portrait",
+
+      size: "narrow",
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    page: true,
+
+
     description: [
+
       "Yu Qingli Tower is a high-rise project in Shanghai, China.",
+
       "Project description and design narrative will be added here."
+
     ],
 
+
     hero: {
+
       image: null,
+
       position: "50% 50%"
+
     },
+
 
     gallery: [],
 
+
     previous: "metropolitan-park",
+
     next: "southside-park"
+
   },
 
 
@@ -78,50 +184,86 @@ const WORKS = {
   "southside-park": {
 
     number: "03",
+
     title: "1 Southside Park",
 
     location: "Miami, Florida",
+
     typology: "Mixed-Use",
+
     office: "SHoP Architects",
+
     role: "Architect / Designer",
 
     year: "—",
+
     status: "—",
 
-    description: [
-      "1 Southside Park is a mixed-use development in Miami, Florida. The project brings together residential, commercial and public-facing programs within a larger urban framework.",
-      "Project description and design narrative will be added here. This section can describe the project's urban strategy, massing, facade system, material logic, environmental response and relationship to the surrounding context."
-    ],
 
-    hero: {
-      image: "images/projects/southside-park/01-hero.jpg",
-      position: "50% 50%"
+    category: "professional",
+
+    index: {
+
+      show: true,
+
+      image:
+        "images/projects/southside-park/01-hero.jpg",
+
+      position:
+        "50% 50%"
+
     },
 
-    gallery: [
 
-      /*
-      Example:
+    featured: true,
 
-      {
-        image: "images/projects/southside-park/02.jpg",
-        ratio: "landscape",
-        position: "50% 50%",
-        caption: "Exterior View"
-      },
+    home: {
 
-      {
-        image: "images/projects/southside-park/03.jpg",
-        ratio: "wide",
-        position: "50% 40%",
-        caption: "Urban Context"
-      }
-      */
+      column: "left",
+
+      ratio: "portrait",
+
+      size: "narrow",
+
+      image:
+        "images/projects/southside-park/01-hero.jpg",
+
+      position:
+        "50% 50%"
+
+    },
+
+
+    page: true,
+
+
+    description: [
+
+      "1 Southside Park is a mixed-use development in Miami, Florida. The project brings together residential, commercial and public-facing programs within a larger urban framework.",
+
+      "Project description and design narrative will be added here. This section can describe the project's urban strategy, massing, facade system, material logic, environmental response and relationship to the surrounding context."
 
     ],
 
+
+    hero: {
+
+      image:
+        "images/projects/southside-park/01-hero.jpg",
+
+      position:
+        "50% 50%"
+
+    },
+
+
+    gallery: [],
+
+
     previous: "yu-qingli",
+
     next: "luxelake-c23"
+
   },
 
 
@@ -133,30 +275,80 @@ const WORKS = {
   "luxelake-c23": {
 
     number: "04",
+
     title: "Luxelake C23",
 
     location: "Chengdu, China",
+
     typology: "Residential",
+
     office: "SHoP Architects",
+
     role: "Architect / Designer",
 
     year: "—",
+
     status: "—",
 
+
+    category: "professional",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    featured: true,
+
+    home: {
+
+      column: "right",
+
+      ratio: "landscape",
+
+      size: "full",
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    page: true,
+
+
     description: [
+
       "Luxelake C23 is a residential project in Chengdu, China.",
+
       "Project description and design narrative will be added here."
+
     ],
 
+
     hero: {
+
       image: null,
+
       position: "50% 50%"
+
     },
+
 
     gallery: [],
 
+
     previous: "southside-park",
+
     next: "building-140"
+
   },
 
 
@@ -168,30 +360,256 @@ const WORKS = {
   "building-140": {
 
     number: "05",
+
     title: "Building 140",
 
     location: "Governors Island, New York",
+
     typology: "Adaptive Reuse",
+
     office: "SHoP Architects",
+
     role: "Architect / Designer",
 
     year: "—",
+
     status: "—",
 
+
+    category: "professional",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    featured: true,
+
+    home: {
+
+      column: "feature",
+
+      ratio: "landscape",
+
+      size: "feature",
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    page: true,
+
+
     description: [
+
       "Building 140 is an adaptive reuse project on Governors Island, New York.",
+
       "Project description and design narrative will be added here."
+
     ],
 
+
     hero: {
+
       image: null,
+
       position: "50% 50%"
+
     },
+
 
     gallery: [],
 
+
     previous: "luxelake-c23",
+
     next: null
+
+  },
+
+
+
+  /* =====================================================
+     06 — SMOTHERS ELEMENTARY SCHOOL
+     ===================================================== */
+
+  "smothers-elementary": {
+
+    number: "06",
+
+    title: "Smothers Elementary School",
+
+    location: "Washington, DC",
+
+    typology: "Education",
+
+    office: "DLR Group",
+
+    role: "Architectural Designer",
+
+    year: "—",
+
+    status: "—",
+
+
+    category: "professional",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    featured: false,
+
+    page: false
+
+  },
+
+
+
+  /* =====================================================
+     07 — SOUTH LAKE ELEMENTARY SCHOOL
+     ===================================================== */
+
+  "south-lake-elementary": {
+
+    number: "07",
+
+    title: "South Lake Elementary School",
+
+    location: "Maryland",
+
+    typology: "Education",
+
+    office: "DLR Group",
+
+    role: "Architectural Designer",
+
+    year: "—",
+
+    status: "—",
+
+
+    category: "professional",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    featured: false,
+
+    page: false
+
+  },
+
+
+
+  /* =====================================================
+     08 — ACADEMIC PROJECT 01
+     ===================================================== */
+
+  "academic-project-01": {
+
+    number: "08",
+
+    title: "Academic Project 01",
+
+    location: "Cornell University",
+
+    typology: "Studio",
+
+    office: "Academic",
+
+    role: "Student",
+
+    year: "—",
+
+    status: "—",
+
+
+    category: "academic",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    featured: false,
+
+    page: false
+
+  },
+
+
+
+  /* =====================================================
+     09 — ACADEMIC PROJECT 02
+     ===================================================== */
+
+  "academic-project-02": {
+
+    number: "09",
+
+    title: "Academic Project 02",
+
+    location: "Pratt Institute",
+
+    typology: "Studio",
+
+    office: "Academic",
+
+    role: "Student",
+
+    year: "—",
+
+    status: "—",
+
+
+    category: "academic",
+
+    index: {
+
+      show: true,
+
+      image: null,
+
+      position: "50% 50%"
+
+    },
+
+
+    featured: false,
+
+    page: false
+
   }
 
 };
