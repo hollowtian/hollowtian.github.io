@@ -1,216 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>About — Haotian Zhang</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #f7f7f5;
-      color: #111;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      padding: 0 32px;
-    }
-
-    header {
-      height: 72px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      border-bottom: 1px solid #111;
-    }
-
-    .site-name {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      font-size: 12px;
-    }
-
-    .page-title {
-      padding: 30px 0 80px;
-    }
-
-    h1 {
-      font-size: clamp(80px, 11vw, 180px);
-      line-height: 0.84;
-      letter-spacing: -0.07em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .intro {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 70px;
-      padding: 30px 0 100px;
-      border-top: 1px solid #111;
-    }
-
-    .intro-label {
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .intro-text {
-      font-size: clamp(28px, 3.2vw, 50px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      max-width: 1050px;
-    }
-
-    .details {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      padding: 30px 0 100px;
-      border-top: 1px solid #111;
-    }
-
-    .detail-title {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 14px;
-    }
-
-    .detail-text {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .bio {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 70px;
-      padding: 30px 0 120px;
-      border-top: 1px solid #111;
-    }
-
-    .bio-title {
-      font-size: 30px;
-      letter-spacing: -0.04em;
-    }
-
-    .bio-text {
-      max-width: 850px;
-      font-size: 17px;
-      line-height: 1.55;
-    }
-
-    .bio-text p {
-      margin-bottom: 24px;
-    }
-
-    .interests {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      border-top: 1px solid #111;
-      margin-bottom: 120px;
-    }
-
-    .interest {
-      min-height: 180px;
-      padding: 14px;
-      border-right: 1px solid #111;
-      border-bottom: 1px solid #111;
-      display: flex;
-      align-items: flex-end;
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.04em;
-    }
-
-    .interest:first-child {
-      border-left: 1px solid #111;
-    }
-
-    footer {
-      border-top: 1px solid #111;
-      padding: 18px 0 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-    }
-
-    @media (max-width: 900px) {
-      .page {
-        padding: 0 16px;
-      }
-
-      header {
-        height: auto;
-        padding: 18px 0;
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      nav {
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      .intro,
-      .bio {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .details {
-        grid-template-columns: 1fr;
-      }
-
-      .interests {
-        grid-template-columns: 1fr;
-      }
-
-      .interest {
-        min-height: 100px;
-        border-left: 1px solid #111;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <div class="page">
 
-    <header>
+    <header class="site-header">
+
       <a class="site-name" href="index.html">
         HAOTIAN ZHANG
       </a>
 
-      <nav>
+      <nav class="site-nav">
         <a href="index.html#work">WORK</a>
         <a href="projects.html">PROJECT INDEX</a>
         <a href="journal.html">JOURNAL</a>
         <a href="about.html">ABOUT</a>
         <a href="cv.html">CV</a>
       </nav>
+
     </header>
+
 
     <main>
 
@@ -218,70 +37,92 @@
         <h1>About</h1>
       </section>
 
-      <section class="intro">
 
-        <div class="intro-label">
+      <section class="about-intro">
+
+        <div class="label">
           Profile
         </div>
 
-        <div class="intro-text">
-          Haotian Zhang is a New York–based licensed architect working across
-          architecture, urban design, facade systems and complex building geometries.
+        <div class="about-intro-text">
+          Haotian Zhang is a New York–based licensed architect
+          working across architecture, urban design, facade systems
+          and complex building geometries.
         </div>
 
       </section>
 
-      <section class="details">
+
+      <section class="about-details">
 
         <div>
-          <div class="detail-title">Practice</div>
-          <div class="detail-text">
+
+          <div class="about-detail-title">
+            Practice
+          </div>
+
+          <div class="about-detail-text">
             Architecture<br>
             Urban Design<br>
             Facade Design<br>
             Design Development
           </div>
+
         </div>
 
+
         <div>
-          <div class="detail-title">Education</div>
-          <div class="detail-text">
+
+          <div class="about-detail-title">
+            Education
+          </div>
+
+          <div class="about-detail-text">
             Cornell University<br>
             M.S. Advanced Architectural Design<br><br>
 
             Pratt Institute<br>
             Bachelor of Architecture
           </div>
+
         </div>
 
+
         <div>
-          <div class="detail-title">Location</div>
-          <div class="detail-text">
+
+          <div class="about-detail-title">
+            Location
+          </div>
+
+          <div class="about-detail-text">
             New York<br>
             United States
           </div>
+
         </div>
 
       </section>
 
-      <section class="bio">
 
-        <div class="bio-title">
+      <section class="about-bio">
+
+        <div class="about-bio-title">
           Biography
         </div>
 
-        <div class="bio-text">
+        <div class="about-bio-text">
 
           <p>
-            Haotian currently works at SHoP Architects, contributing to projects
-            across multiple scales and typologies, including mixed-use development,
-            high-rise residential, urban design and adaptive reuse.
+            Haotian currently works at SHoP Architects,
+            contributing to projects across multiple scales and typologies,
+            including mixed-use development, residential towers,
+            urban design and adaptive reuse.
           </p>
 
           <p>
             His work focuses on the relationship between architectural concept,
-            complex geometry, facade systems and the practical realities of project
-            delivery.
+            complex geometry, facade systems and the practical realities
+            of project delivery.
           </p>
 
           <p>
@@ -293,21 +134,44 @@
 
       </section>
 
-      <section class="interests">
 
-        <div class="interest">Architecture</div>
-        <div class="interest">Automobile</div>
-        <div class="interest">Photography</div>
-        <div class="interest">Objects</div>
-        <div class="interest">Places</div>
+      <section class="about-interests">
+
+        <div class="about-interest">
+          Architecture
+        </div>
+
+        <div class="about-interest">
+          Automobile
+        </div>
+
+        <div class="about-interest">
+          Photography
+        </div>
+
+        <div class="about-interest">
+          Objects
+        </div>
+
+        <div class="about-interest">
+          Places
+        </div>
 
       </section>
 
     </main>
 
-    <footer>
-      <div>© 2026 HAOTIAN ZHANG</div>
-      <a href="index.html">← HOME</a>
+
+    <footer class="site-footer">
+
+      <div>
+        © 2026 HAOTIAN ZHANG
+      </div>
+
+      <a href="index.html">
+        ← HOME
+      </a>
+
     </footer>
 
   </div>
