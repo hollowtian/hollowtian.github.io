@@ -417,3 +417,110 @@ if (typeof SITE !== "undefined") {
 
 
 }
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+
+const revealTargets = document.querySelectorAll(
+  `
+  .section-heading,
+  .home-work-card,
+  .home-work-feature,
+  .home-journal-item,
+  .home-about,
+  .project-index-row,
+  .journal-category,
+  .journal-post,
+  .about-intro,
+  .about-details,
+  .about-bio,
+  .cv-intro,
+  .cv-section,
+  .project-detail-header,
+  .project-hero-layout,
+  .project-copy-section,
+  .project-gallery-item,
+  .article-header,
+  .article-hero,
+  .article-paragraph,
+  .article-heading,
+  .article-figure
+  `
+);
+
+
+revealTargets.forEach(
+  element => {
+
+    element.classList.add(
+      "reveal-item"
+    );
+
+    if (
+      element.classList.contains("section-heading") ||
+      element.classList.contains("home-about") ||
+      element.classList.contains("about-intro") ||
+      element.classList.contains("cv-intro")
+    ) {
+
+      element.classList.add(
+        "reveal-line"
+      );
+
+    }
+
+  }
+);
+
+
+/* ---------------------------------------------------------
+   OBSERVER
+   --------------------------------------------------------- */
+
+
+const revealObserver =
+  new IntersectionObserver(
+
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            entry.target.classList.add(
+              "is-visible"
+            );
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        }
+      );
+
+    },
+
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px"
+    }
+
+  );
+
+
+revealTargets.forEach(
+  element => {
+
+    revealObserver.observe(
+      element
+    );
+
+  }
+);
