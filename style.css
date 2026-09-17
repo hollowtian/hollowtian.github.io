@@ -2678,3 +2678,242 @@ body {
   }
 
 }
+
+/* =========================================================
+   GRAPHIC REFINEMENT — PASS 02A
+   Micro Graphics + Interaction
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   01 — SECTION REGISTRATION MARK
+   --------------------------------------------------------- */
+
+.section-heading {
+  position: relative;
+}
+
+.section-heading::after {
+  content: "+";
+
+  position: absolute;
+  right: 0;
+  top: 13px;
+
+  font-family: var(--font-technical);
+  font-size: 11px;
+  font-weight: 400;
+
+  color: var(--color-muted);
+}
+
+
+/* ---------------------------------------------------------
+   02 — SMALL LABEL REFINEMENT
+   --------------------------------------------------------- */
+
+.label {
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 0.07em;
+
+  color: #444;
+}
+
+
+/* ---------------------------------------------------------
+   03 — SELECTED WORK HOVER
+   --------------------------------------------------------- */
+
+.home-work-card {
+  position: relative;
+}
+
+
+/*
+   Tiny directional mark.
+   Hidden until interaction.
+*/
+
+.home-work-info::after {
+  content: "↗";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  font-family: var(--font-technical);
+  font-size: 11px;
+
+  opacity: 0;
+
+  transform: translate(-5px, 0);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+
+.home-work-card:hover
+.home-work-info::after {
+  opacity: 1;
+
+  transform: translate(0, 0);
+}
+
+
+/* ---------------------------------------------------------
+   04 — VERY SUBTLE IMAGE MOTION
+   --------------------------------------------------------- */
+
+.home-work-image {
+  transition:
+    transform 0.45s cubic-bezier(.2,.7,.2,1);
+}
+
+.home-work-card:hover
+.home-work-image {
+  transform: scale(1.012);
+}
+
+
+/* ---------------------------------------------------------
+   05 — PROJECT INDEX DIRECTIONAL MARK
+   --------------------------------------------------------- */
+
+.project-index-row {
+  position: relative;
+}
+
+.project-index-row::after {
+  content: "↗";
+
+  position: absolute;
+
+  right: 8px;
+
+  font-family: var(--font-technical);
+  font-size: 11px;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-index-row:hover::after {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ---------------------------------------------------------
+   06 — TECHNICAL RULE ACCENT
+   --------------------------------------------------------- */
+
+.project-index-table,
+.journal-categories,
+.project-sidebar,
+.cv-section {
+  position: relative;
+}
+
+
+/*
+   Tiny square at the beginning of selected rules.
+   Similar to a drawing datum point.
+*/
+
+.project-index-table::before,
+.journal-categories::before {
+  content: "";
+
+  position: absolute;
+
+  top: -2px;
+  left: 0;
+
+  width: 4px;
+  height: 4px;
+
+  background: var(--color-text);
+}
+
+
+/* ---------------------------------------------------------
+   07 — FOOTER IDENTITY
+   --------------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+
+  font-family: var(--font-technical);
+
+  letter-spacing: 0.015em;
+}
+
+.site-footer::before {
+  content: "HZ / 张浩天";
+
+  position: absolute;
+
+  top: -24px;
+  left: 0;
+
+  font-family: var(--font-technical);
+  font-size: 9px;
+
+  letter-spacing: 0.05em;
+
+  color: var(--color-muted);
+}
+
+
+/* ---------------------------------------------------------
+   08 — NAV MICRO INTERACTION
+   --------------------------------------------------------- */
+
+.site-nav a {
+  transition:
+    opacity 0.2s ease;
+}
+
+.site-nav:hover a {
+  opacity: 0.42;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   09 — MOBILE
+   Keep graphics quieter.
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .section-heading::after {
+    top: 14px;
+  }
+
+  .home-work-info::after,
+  .project-index-row::after {
+    display: none;
+  }
+
+  .home-work-card:hover
+  .home-work-image {
+    transform: none;
+  }
+
+}
