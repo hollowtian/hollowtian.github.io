@@ -2160,3 +2160,457 @@ img {
 .error-404-portal-label {
   border-bottom-color: transparent;
 }
+
+/* =========================================================
+   GRAPHIC REFINEMENT — PASS 01
+   Desktop Scale + Breathing Room + Typography
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   01 — DESKTOP CANVAS
+   --------------------------------------------------------- */
+
+:root {
+  --page-max: 1560px;
+  --page-padding: 36px;
+
+  --font-display:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --font-body:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --font-technical:
+    "SFMono-Regular",
+    "SF Mono",
+    "Roboto Mono",
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+}
+
+
+/* ---------------------------------------------------------
+   02 — PRIMARY TYPOGRAPHY
+   --------------------------------------------------------- */
+
+body {
+  font-family: var(--font-body);
+}
+
+.home-title,
+.page-title h1,
+.project-detail-title,
+.article-title,
+.section-title,
+.home-work-name,
+.project-index-name,
+.journal-category-name,
+.journal-post-title,
+.about-intro-text,
+.about-bio-title,
+.cv-section-title,
+.cv-entry-title {
+  font-family: var(--font-display);
+}
+
+
+/* ---------------------------------------------------------
+   03 — TECHNICAL TYPOGRAPHY
+   Small information receives a second visual voice.
+   --------------------------------------------------------- */
+
+.label,
+.home-work-number,
+.home-work-meta,
+.home-journal-number,
+
+.project-index-number,
+.project-index-location,
+.project-index-type,
+.project-index-office,
+
+.project-detail-kicker,
+.project-sidebar-label,
+.project-sidebar-value,
+.project-copy-label,
+.project-caption,
+
+.journal-post-category,
+.journal-post-date,
+
+.article-meta,
+.article-caption,
+
+.cv-date,
+.cv-small-title,
+
+.error-404-caption {
+  font-family: var(--font-technical);
+}
+
+
+/* slightly tighten technical text */
+
+.label,
+.project-detail-kicker,
+.project-sidebar-label,
+.project-copy-label,
+.journal-post-category,
+.article-meta,
+.cv-small-title {
+  letter-spacing: 0.06em;
+}
+
+
+/* ---------------------------------------------------------
+   04 — HEADER
+   Slightly quieter and more editorial.
+   --------------------------------------------------------- */
+
+.site-header {
+  height: 68px;
+}
+
+.site-name {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.site-nav {
+  gap: 26px;
+  font-size: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   05 — HOME HERO
+   Reduce the "in your face" feeling.
+   --------------------------------------------------------- */
+
+.home-hero {
+  min-height: 68vh;
+
+  grid-template-columns: 4.5fr 7.5fr;
+
+  gap: 44px;
+
+  padding-top: 30px;
+  padding-bottom: 42px;
+}
+
+.home-title {
+  font-size: clamp(62px, 7vw, 118px);
+
+  line-height: 0.84;
+
+  letter-spacing: -0.06em;
+}
+
+.home-hero-image {
+  min-height: 560px;
+}
+
+
+/* ---------------------------------------------------------
+   06 — SECTION HEADINGS
+   Slightly quieter hierarchy.
+   --------------------------------------------------------- */
+
+.section-heading {
+  padding: 16px 0;
+}
+
+.section-title {
+  font-size: 27px;
+}
+
+
+/* ---------------------------------------------------------
+   07 — SELECTED WORK
+   Keep all existing image ratios and alignment.
+   Only increase breathing room.
+   --------------------------------------------------------- */
+
+.home-work-layout {
+  column-gap: 18px;
+
+  padding-bottom: 112px;
+}
+
+.home-work-column {
+  gap: 52px;
+}
+
+.home-work-info {
+  margin-top: 1px;
+}
+
+.home-work-name {
+  font-size: 14px;
+}
+
+.home-work-meta {
+  font-size: 10px;
+}
+
+.home-work-number {
+  font-size: 10px;
+}
+
+
+/*
+IMPORTANT:
+
+.home-work-card-narrow remains 90%.
+.home-work-feature remains 66.666%.
+
+Those proportions are intentionally untouched.
+*/
+
+
+/* ---------------------------------------------------------
+   08 — HOME JOURNAL
+   More like an editorial index.
+   --------------------------------------------------------- */
+
+.home-journal {
+  padding-bottom: 120px;
+}
+
+.home-journal-item {
+  min-height: 172px;
+}
+
+.home-journal-name {
+  font-size: 20px;
+}
+
+.home-journal-item.has-image
+.home-journal-name {
+  font-size: 21px;
+}
+
+
+/* ---------------------------------------------------------
+   09 — HOME ABOUT
+   Reduce oversized manifesto feeling.
+   --------------------------------------------------------- */
+
+.home-about {
+  gap: 100px;
+
+  padding-bottom: 130px;
+}
+
+.home-about-title {
+  font-size: 30px;
+}
+
+.home-about-text {
+  max-width: 760px;
+
+  font-size: clamp(22px, 1.9vw, 32px);
+
+  line-height: 1.16;
+}
+
+
+/* ---------------------------------------------------------
+   10 — GLOBAL PAGE TITLES
+   Less poster-like on desktop.
+   --------------------------------------------------------- */
+
+.page-title {
+  padding: 34px 0 88px;
+}
+
+.page-title h1 {
+  font-size: clamp(62px, 7vw, 118px);
+
+  line-height: 0.84;
+
+  letter-spacing: -0.06em;
+}
+
+
+/* ---------------------------------------------------------
+   11 — PROJECT INDEX
+   More compact / archival.
+   --------------------------------------------------------- */
+
+.project-index-section {
+  margin-bottom: 110px;
+}
+
+.project-index-row {
+  min-height: 98px;
+}
+
+.project-index-name {
+  font-size: 20px;
+}
+
+.project-index-number,
+.project-index-location,
+.project-index-type,
+.project-index-office {
+  font-size: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   12 — JOURNAL DIRECTORY
+   --------------------------------------------------------- */
+
+.journal-intro {
+  padding-bottom: 110px;
+}
+
+.journal-intro-text {
+  font-size: clamp(25px, 2.5vw, 38px);
+}
+
+.journal-category {
+  min-height: 112px;
+}
+
+.journal-category-name {
+  font-size: clamp(26px, 2.6vw, 42px);
+}
+
+
+/* ---------------------------------------------------------
+   13 — ABOUT
+   --------------------------------------------------------- */
+
+.about-intro-text {
+  font-size: clamp(24px, 2.3vw, 36px);
+}
+
+.about-bio-text {
+  font-size: 16px;
+}
+
+.about-interest {
+  min-height: 160px;
+
+  font-size: 20px;
+}
+
+
+/* ---------------------------------------------------------
+   14 — CV
+   --------------------------------------------------------- */
+
+.cv-intro-text {
+  font-size: clamp(23px, 2.2vw, 34px);
+}
+
+.cv-section-title {
+  font-size: 26px;
+}
+
+.cv-entry-title {
+  font-size: 17px;
+}
+
+
+/* ---------------------------------------------------------
+   15 — WORK DETAIL
+
+   Deliberately preserve:
+   --project-page-max: 1080px
+   --project-column-width: 74%
+
+   The existing project publication scale already works.
+   --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   16 — ARTICLE
+   Keep article comfortably narrow.
+   --------------------------------------------------------- */
+
+.article-title {
+  font-size: clamp(44px, 5.2vw, 82px);
+}
+
+
+/* ---------------------------------------------------------
+   17 — DESKTOP WITH LIMITED WIDTH
+   Prevent 36px padding from becoming too aggressive.
+   --------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+
+  :root {
+    --page-padding: 28px;
+  }
+
+  .home-title,
+  .page-title h1 {
+    font-size: clamp(58px, 8vw, 96px);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   18 — MOBILE
+   Preserve the existing mobile language.
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  :root {
+    --page-padding: 16px;
+  }
+
+  .site-header {
+    height: auto;
+  }
+
+  .site-nav {
+    font-size: 11px;
+    gap: 18px;
+  }
+
+  .home-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .home-title {
+    font-size: 20vw;
+  }
+
+  .home-hero-image {
+    min-height: 70vh;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+
+  .home-journal-item {
+    min-height: 160px;
+  }
+
+  .home-about-text {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .page-title h1 {
+    font-size: clamp(58px, 18vw, 100px);
+  }
+
+}
