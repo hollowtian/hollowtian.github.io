@@ -398,10 +398,8 @@ function initializeReveal() {
     document.querySelectorAll(
       `
       .section-heading,
-      .home-work-card,
       .home-journal-item,
       .home-about,
-      .project-strip-card,
       .project-strip-section-head,
       .journal-category,
       .journal-post,
