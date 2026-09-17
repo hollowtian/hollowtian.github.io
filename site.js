@@ -606,3 +606,23 @@ backToTop.addEventListener(
 
   }
 );
+
+/* =========================================================
+   PROJECT STRIP ACTIVE STATE
+   ========================================================= */
+
+document.querySelectorAll(".project-strip-track").forEach(track => {
+  const cards = track.querySelectorAll(".project-strip-card");
+
+  cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      cards.forEach(c => c.classList.remove("is-active"));
+      card.classList.add("is-active");
+    });
+
+    card.addEventListener("focus", () => {
+      cards.forEach(c => c.classList.remove("is-active"));
+      card.classList.add("is-active");
+    });
+  });
+});
