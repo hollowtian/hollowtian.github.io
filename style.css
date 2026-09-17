@@ -2079,53 +2079,79 @@ img {
   }
 }
 
+/* =========================================================
+   404 PORTAL / HEARTH
+   ========================================================= */
+
 .error-404-portal {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  text-decoration: none;
+
   color: inherit;
+  text-decoration: none;
 }
 
 .error-404-portal-icon {
   width: 58px;
   height: 58px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   border: 1px solid #111;
   border-radius: 50%;
+
   flex-shrink: 0;
-  transition: transform 0.2s ease, background 0.2s ease;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
 }
 
 .error-404-portal-icon svg {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
+
   display: block;
 }
 
 .error-404-portal-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+
+  gap: 4px;
 }
 
 .error-404-portal-label {
+  width: fit-content;
+
   font-size: 12px;
   letter-spacing: 0.02em;
+
   text-transform: uppercase;
+
   border-bottom: 1px solid #111;
-  width: fit-content;
+
   padding-bottom: 3px;
 }
 
 .error-404-portal-sub {
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
+
+  color: #555;
 }
 
-.error-404-portal:hover .error-404-portal-icon {
-  transform: scale(1.06) rotate(-6deg);
-  background: rgba(0, 0, 0, 0.04);
+.error-404-portal:hover
+.error-404-portal-icon {
+  transform: scale(1.08) rotate(-8deg);
+
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.error-404-portal:hover
+.error-404-portal-label {
+  border-bottom-color: transparent;
 }
