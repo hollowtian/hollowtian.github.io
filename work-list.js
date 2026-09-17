@@ -4,7 +4,6 @@
    ========================================================= */
 
 
-
 /* =========================================================
    HELPERS
    ========================================================= */
@@ -91,20 +90,22 @@ function renderHomeWorks() {
   }
 
 
-
   const works =
     getSortedWorks();
-
 
 
   works.forEach(
     ([id, work]) => {
 
 
-      if (!work.featured || !work.home) {
-        return;
-      }
+      if (
+        !work.featured ||
+        !work.home
+      ) {
 
+        return;
+
+      }
 
 
       const card =
@@ -117,7 +118,6 @@ function renderHomeWorks() {
 
       card.href =
         `work.html?id=${id}`;
-
 
 
       if (
@@ -142,7 +142,6 @@ function renderHomeWorks() {
       }
 
 
-
       const image =
         document.createElement("div");
 
@@ -156,7 +155,6 @@ function renderHomeWorks() {
         work.home.image,
         work.home.position
       );
-
 
 
       const info =
@@ -189,18 +187,23 @@ function renderHomeWorks() {
       `;
 
 
+      card.appendChild(
+        image
+      );
 
-      card.appendChild(image);
 
-      card.appendChild(info);
-
+      card.appendChild(
+        info
+      );
 
 
       if (
         work.home.column === "left"
       ) {
 
-        leftColumn.appendChild(card);
+        leftColumn.appendChild(
+          card
+        );
 
       }
 
@@ -209,7 +212,9 @@ function renderHomeWorks() {
         work.home.column === "right"
       ) {
 
-        rightColumn.appendChild(card);
+        rightColumn.appendChild(
+          card
+        );
 
       }
 
@@ -233,7 +238,7 @@ function renderHomeWorks() {
 
 
 /* =========================================================
-   PROJECT INDEX
+   PROJECT INDEX — THUMBNAIL GRID
    ========================================================= */
 
 
@@ -252,15 +257,18 @@ function renderProjectIndex() {
     );
 
 
-  if (!professional || !academic) {
-    return;
-  }
+  if (
+    !professional ||
+    !academic
+  ) {
 
+    return;
+
+  }
 
 
   const works =
     getSortedWorks();
-
 
 
   works.forEach(
@@ -277,94 +285,241 @@ function renderProjectIndex() {
       }
 
 
+      /* -----------------------------------------------
+         CARD
+         ----------------------------------------------- */
 
-      const row =
+      const card =
         document.createElement(
           work.page ? "a" : "div"
         );
 
 
-      row.className =
-        "project-index-row";
+      card.className =
+        "project-strip-card";
 
 
       if (work.page) {
 
-        row.href =
+        card.href =
           `work.html?id=${id}`;
+
+      }
+
+      else {
+
+        card.classList.add(
+          "project-strip-card-inactive"
+        );
 
       }
 
 
 
-      const thumb =
-        document.createElement("div");
+      /* -----------------------------------------------
+         IMAGE
+         ----------------------------------------------- */
+
+      const image =
+        document.createElement(
+          "div"
+        );
 
 
-      thumb.className =
-        "project-index-thumb";
+      image.className =
+        "project-strip-thumb";
 
 
       applyBackgroundImage(
-        thumb,
+        image,
         work.index.image,
         work.index.position
       );
 
 
 
-      row.innerHTML = `
+      /* -----------------------------------------------
+         INFORMATION
+         ----------------------------------------------- */
 
-        <div class="project-index-number">
+      const info =
+        document.createElement(
+          "div"
+        );
+
+
+      info.className =
+        "project-strip-meta";
+
+
+      info.innerHTML = `
+
+        <div class="project-strip-number">
           ${work.number}
+        </div>
+
+        <div class="project-strip-name">
+          ${work.title}
+        </div>
+
+        <div class="project-strip-subtitle">
+          ${work.location}
+        </div>
+
+        <div class="project-strip-detail">
+          ${work.typology}
+          <span>/</span>
+          ${work.office}
         </div>
 
       `;
 
 
-      row.appendChild(thumb);
 
-
-
-      row.insertAdjacentHTML(
-        "beforeend",
-
-        `
-
-        <div class="project-index-name">
-          ${work.title}
-        </div>
-
-        <div class="project-index-location">
-          ${work.location}
-        </div>
-
-        <div class="project-index-type">
-          ${work.typology}
-        </div>
-
-        <div class="project-index-office">
-          ${work.office}
-        </div>
-
-        `
+      card.appendChild(
+        image
       );
 
 
+      card.appendChild(
+        info
+      );
+
+
+
+      /* -----------------------------------------------
+         CATEGORY
+         ----------------------------------------------- */
 
       if (
         work.category === "academic"
       ) {
 
-        academic.appendChild(row);
+        academic.appendChild(
+          card
+        );
 
       }
 
       else {
 
-        professional.appendChild(row);
+        professional.appendChild(
+          card
+        );
 
       }
+
+
+    }
+  );
+
+
+  initProjectIndexInteraction();
+
+}
+
+
+
+/* =========================================================
+   PROJECT INDEX INTERACTION
+   ========================================================= */
+
+
+function initProjectIndexInteraction() {
+
+
+  const grids =
+    document.querySelectorAll(
+      ".project-strip-grid"
+    );
+
+
+  grids.forEach(
+    grid => {
+
+
+      const cards =
+        grid.querySelectorAll(
+          ".project-strip-card"
+        );
+
+
+      cards.forEach(
+        card => {
+
+
+          card.addEventListener(
+            "mouseenter",
+            () => {
+
+
+              cards.forEach(
+                otherCard => {
+
+                  otherCard.classList.remove(
+                    "is-active"
+                  );
+
+                }
+              );
+
+
+              card.classList.add(
+                "is-active"
+              );
+
+
+            }
+          );
+
+
+          card.addEventListener(
+            "focus",
+            () => {
+
+
+              cards.forEach(
+                otherCard => {
+
+                  otherCard.classList.remove(
+                    "is-active"
+                  );
+
+                }
+              );
+
+
+              card.classList.add(
+                "is-active"
+              );
+
+
+            }
+          );
+
+
+        }
+      );
+
+
+      grid.addEventListener(
+        "mouseleave",
+        () => {
+
+
+          cards.forEach(
+            card => {
+
+              card.classList.remove(
+                "is-active"
+              );
+
+            }
+          );
+
+
+        }
+      );
 
 
     }
