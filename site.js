@@ -14,17 +14,26 @@ if (typeof SITE !== "undefined") {
   /* SITE NAME */
 
   document
-    .querySelectorAll(".site-name")
-    .forEach(element => {
+  .querySelectorAll(".site-name")
+  .forEach(element => {
 
-      element.textContent =
-        SITE.nameDisplay;
+    element.href =
+      "index.html";
 
-      element.href =
-        "index.html";
+    element.setAttribute(
+      "aria-label",
+      "Haotian Zhang — Home"
+    );
 
-    });
+    element.innerHTML = `
+      <img
+        src="images/favicon/favicon.png"
+        alt=""
+        class="site-logo-image"
+      >
+    `;
 
+  });
 
   /* =====================================================
      CURRENT PAGE
