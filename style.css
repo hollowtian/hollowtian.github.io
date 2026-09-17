@@ -124,11 +124,12 @@ img {
 
   line-height: 1.25;
 
-  letter-spacing: 0.06em;
+  letter-spacing: 0.065em;
 
   text-transform: uppercase;
 
-  color: #444;
+  color:
+    var(--color-muted);
 }
 
 
@@ -168,36 +169,49 @@ img {
 
 
 /* =========================================================
-   SECTION HEADINGS
+   SECTION HEADER SYSTEM
    ========================================================= */
 
-.section-heading {
-  display: grid;
 
-  grid-template-columns:
-    1fr 3fr;
+/*
+   Universal hierarchy:
+
+   SMALL TECHNICAL LABEL
+   Medium section descriptor
+   ──────
+
+   The two pieces are now intentionally grouped
+   rather than separated across the page.
+*/
+
+
+.section-heading {
+  position: relative;
+
+  display: flex;
+
+  flex-direction:
+    column;
 
   align-items:
-    baseline;
+    flex-start;
 
-  position:
-    relative;
+  gap: 5px;
 
   padding:
-    22px 0 18px;
+    21px 0 22px;
 }
 
 
 .section-heading::before {
   content: "";
 
-  position:
-    absolute;
+  position: absolute;
 
   top: 0;
   left: 0;
 
-  width: 84px;
+  width: 72px;
   height: 1px;
 
   background:
@@ -208,8 +222,7 @@ img {
 .section-heading::after {
   content: "+";
 
-  position:
-    absolute;
+  position: absolute;
 
   top: -7px;
   right: 0;
@@ -217,7 +230,7 @@ img {
   font-family:
     var(--font-technical);
 
-  font-size: 10px;
+  font-size: 9px;
 
   color:
     var(--color-muted);
@@ -225,15 +238,19 @@ img {
 
 
 .section-title {
+  max-width: 760px;
+
   font-family:
     var(--font-display);
 
-  font-size: 27px;
+  font-size: 22px;
 
-  font-weight: 600;
+  line-height: 1.08;
+
+  font-weight: 500;
 
   letter-spacing:
-    -0.04em;
+    -0.03em;
 }
 
 
@@ -964,21 +981,28 @@ img {
 }
 
 
+/*
+   The Project Index now uses exactly the same
+   label + title hierarchy as homepage sections.
+*/
+
 .project-strip-section-head {
-  display: grid;
-
-  grid-template-columns:
-    220px 1fr;
-
-  gap: 24px;
-
-  align-items: end;
-
   position: relative;
 
-  padding-top: 20px;
+  display: flex;
 
-  margin-bottom: 28px;
+  flex-direction:
+    column;
+
+  align-items:
+    flex-start;
+
+  gap: 5px;
+
+  padding:
+    21px 0 22px;
+
+  margin-bottom: 6px;
 }
 
 
@@ -999,22 +1023,19 @@ img {
 
 
 .project-strip-section-title {
+  max-width: 760px;
+
   font-family:
     var(--font-display);
 
-  font-size:
-    clamp(
-      28px,
-      2.5vw,
-      42px
-    );
+  font-size: 22px;
 
-  line-height: 1;
+  line-height: 1.08;
 
   letter-spacing:
-    -0.045em;
+    -0.03em;
 
-  font-weight: 600;
+  font-weight: 500;
 }
 
 
@@ -1737,33 +1758,68 @@ img {
 
 .cv-section {
   padding:
-    18px 0 80px;
+    21px 0 80px;
 
-  border-top:
-    1px solid
-    var(--color-line);
+  position: relative;
+
+  border-top: none;
 }
 
 
+.cv-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 72px;
+  height: 1px;
+
+  background:
+    var(--color-text);
+}
+
+
+/*
+   CV uses the same compact stacked hierarchy.
+*/
+
 .cv-section-heading {
-  display: grid;
+  display: flex;
 
-  grid-template-columns:
-    1fr 3fr;
+  flex-direction:
+    column;
 
-  align-items: baseline;
+  align-items:
+    flex-start;
 
-  margin-bottom: 36px;
+  gap: 5px;
+
+  margin-bottom: 30px;
+}
+
+
+.cv-section-heading .label {
+  order: 0;
 }
 
 
 .cv-section-title {
-  font-size: 26px;
+  order: 1;
 
-  font-weight: 600;
+  font-family:
+    var(--font-display);
+
+  font-size: 22px;
+
+  line-height: 1.08;
+
+  font-weight: 500;
 
   letter-spacing:
-    -0.04em;
+    -0.03em;
 }
 
 
@@ -2910,17 +2966,21 @@ img {
   }
 
 
-  .section-heading,
-  .cv-section-heading {
-    grid-template-columns:
-      1fr;
-
-    gap: 10px;
+  .section-heading {
+    padding:
+      20px 0 20px;
   }
 
 
   .section-heading::before {
     width: 56px;
+  }
+
+
+  .section-title,
+  .project-strip-section-title,
+  .cv-section-title {
+    font-size: 20px;
   }
 
 
@@ -3090,12 +3150,7 @@ img {
 
 
   .project-strip-section-head {
-    grid-template-columns:
-      1fr;
-
-    gap: 10px;
-
-    margin-bottom: 22px;
+    margin-bottom: 4px;
   }
 
 
@@ -3238,7 +3293,8 @@ img {
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
+    scroll-behavior:
+      auto !important;
 
     transition:
       none !important;
