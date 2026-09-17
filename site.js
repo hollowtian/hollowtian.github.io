@@ -524,3 +524,85 @@ revealTargets.forEach(
 
   }
 );
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+
+const backToTop =
+  document.createElement("button");
+
+
+backToTop.className =
+  "back-to-top";
+
+
+backToTop.setAttribute(
+  "aria-label",
+  "Back to top"
+);
+
+
+backToTop.innerHTML =
+  `
+  <span>TOP</span>
+  <span class="back-to-top-arrow">↑</span>
+  `;
+
+
+document.body.appendChild(
+  backToTop
+);
+
+
+/* SHOW / HIDE */
+
+const updateBackToTop = () => {
+
+  if (
+    window.scrollY > 500
+  ) {
+
+    backToTop.classList.add(
+      "is-visible"
+    );
+
+  }
+
+  else {
+
+    backToTop.classList.remove(
+      "is-visible"
+    );
+
+  }
+
+};
+
+
+window.addEventListener(
+  "scroll",
+  updateBackToTop,
+  {
+    passive: true
+  }
+);
+
+
+updateBackToTop();
+
+
+/* CLICK */
+
+backToTop.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+);
