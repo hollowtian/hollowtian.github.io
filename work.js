@@ -4,7 +4,9 @@
 
 
 const params =
-  new URLSearchParams(window.location.search);
+  new URLSearchParams(
+    window.location.search
+  );
 
 
 const workId =
@@ -20,9 +22,13 @@ const work =
    INVALID WORK
    ========================================================= */
 
+
 if (!work) {
 
-  document.querySelector(".project-page").innerHTML = `
+
+  document.querySelector(
+    ".project-page"
+  ).innerHTML = `
 
     <section class="page-title">
 
@@ -47,29 +53,46 @@ if (!work) {
    RENDER WORK
    ========================================================= */
 
+
 else {
 
 
-  /* PAGE TITLE */
+  /* PAGE TITLE
+  ------------------------------------------------------- */
+
 
   document.title =
-    `${work.title} — Haotian Zhang`;
+    `${work.title} — ${SITE.name}`;
 
 
 
-  /* META DESCRIPTION */
+  /* META DESCRIPTION
+  ------------------------------------------------------- */
+
 
   const descriptionMeta =
-    document.getElementById("page-description");
+    document.getElementById(
+      "page-description"
+    ) ||
+    document.querySelector(
+      'meta[name="description"]'
+    );
 
-  descriptionMeta.setAttribute(
-    "content",
-    `${work.title} — selected architectural work by Haotian Zhang.`
-  );
+
+  if (descriptionMeta) {
+
+    descriptionMeta.setAttribute(
+      "content",
+      `${work.title} — selected architectural work by ${SITE.name}.`
+    );
+
+  }
 
 
 
-  /* TITLE */
+  /* TITLE
+  ------------------------------------------------------- */
+
 
   document.getElementById(
     "work-kicker"
@@ -84,30 +107,32 @@ else {
 
 
 
-  /* INFORMATION */
+  /* INFORMATION
+  ------------------------------------------------------- */
+
 
   document.getElementById(
     "work-location"
   ).textContent =
-    work.location;
+    work.location || "—";
 
 
   document.getElementById(
     "work-typology"
   ).textContent =
-    work.typology;
+    work.typology || "—";
 
 
   document.getElementById(
     "work-office"
   ).textContent =
-    work.office;
+    work.office || "—";
 
 
   document.getElementById(
     "work-role"
   ).textContent =
-    work.role;
+    work.role || "—";
 
 
   document.getElementById(
@@ -123,7 +148,9 @@ else {
 
 
 
-  /* HERO */
+  /* HERO
+  ------------------------------------------------------- */
+
 
   const hero =
     document.getElementById(
@@ -131,14 +158,19 @@ else {
     );
 
 
-  if (work.hero && work.hero.image) {
+  if (
+    work.hero &&
+    work.hero.image
+  ) {
+
 
     hero.style.backgroundImage =
       `url("${work.hero.image}")`;
 
 
     hero.style.backgroundPosition =
-      work.hero.position || "50% 50%";
+      work.hero.position ||
+      "50% 50%";
 
 
     hero.classList.add(
@@ -149,7 +181,9 @@ else {
 
 
 
-  /* DESCRIPTION */
+  /* DESCRIPTION
+  ------------------------------------------------------- */
+
 
   const copy =
     document.getElementById(
@@ -157,23 +191,39 @@ else {
     );
 
 
-  work.description.forEach(
-    paragraph => {
-
-      const p =
-        document.createElement("p");
-
-      p.textContent =
-        paragraph;
-
-      copy.appendChild(p);
-
-    }
-  );
+  if (
+    work.description &&
+    Array.isArray(work.description)
+  ) {
 
 
+    work.description.forEach(
+      paragraph => {
 
-  /* GALLERY */
+
+        const p =
+          document.createElement("p");
+
+
+        p.textContent =
+          paragraph;
+
+
+        copy.appendChild(
+          p
+        );
+
+
+      }
+    );
+
+  }
+
+
+
+  /* GALLERY
+  ------------------------------------------------------- */
+
 
   const gallery =
     document.getElementById(
@@ -192,7 +242,9 @@ else {
 
 
         const wrapper =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
 
         wrapper.className =
@@ -201,7 +253,9 @@ else {
 
 
         const image =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
 
         image.className =
@@ -209,7 +263,8 @@ else {
 
 
         const ratio =
-          item.ratio || "landscape";
+          item.ratio ||
+          "landscape";
 
 
         image.classList.add(
@@ -217,17 +272,24 @@ else {
         );
 
 
-        image.style.backgroundImage =
-          `url("${item.image}")`;
+
+        if (item.image) {
 
 
-        image.style.backgroundPosition =
-          item.position || "50% 50%";
+          image.style.backgroundImage =
+            `url("${item.image}")`;
 
 
-        image.classList.add(
-          "has-image"
-        );
+          image.style.backgroundPosition =
+            item.position ||
+            "50% 50%";
+
+
+          image.classList.add(
+            "has-image"
+          );
+
+        }
 
 
 
@@ -241,7 +303,9 @@ else {
 
 
           const caption =
-            document.createElement("div");
+            document.createElement(
+              "div"
+            );
 
 
           caption.className =
@@ -249,8 +313,12 @@ else {
 
 
           const number =
-            String(index + 2)
-              .padStart(2, "0");
+            String(
+              index + 2
+            ).padStart(
+              2,
+              "0"
+            );
 
 
           caption.innerHTML = `
@@ -273,6 +341,7 @@ else {
         }
 
 
+
         gallery.appendChild(
           wrapper
         );
@@ -285,7 +354,9 @@ else {
 
 
 
-  /* PREVIOUS */
+  /* PREVIOUS PROJECT
+  ------------------------------------------------------- */
+
 
   const previous =
     document.getElementById(
@@ -313,7 +384,9 @@ else {
 
   }
 
+
   else {
+
 
     previous.innerHTML = `
 
@@ -327,7 +400,9 @@ else {
 
 
 
-  /* NEXT */
+  /* NEXT PROJECT
+  ------------------------------------------------------- */
+
 
   const next =
     document.getElementById(
@@ -354,5 +429,6 @@ else {
     `;
 
   }
+
 
 }
