@@ -2188,11 +2188,11 @@ img {
     sans-serif;
 
   --font-technical:
+    Consolas,
     "SFMono-Regular",
     "SF Mono",
-    "Roboto Mono",
-    "Liberation Mono",
-    "Courier New",
+    Menlo,
+    Monaco,
     monospace;
 }
 
@@ -2224,7 +2224,6 @@ body {
 
 /* ---------------------------------------------------------
    03 — TECHNICAL TYPOGRAPHY
-   Small information receives a second visual voice.
    --------------------------------------------------------- */
 
 .label,
@@ -2257,7 +2256,7 @@ body {
 }
 
 
-/* slightly tighten technical text */
+/* Cleaner technical text */
 
 .label,
 .project-detail-kicker,
@@ -2266,13 +2265,12 @@ body {
 .journal-post-category,
 .article-meta,
 .cv-small-title {
-  letter-spacing: 0.06em;
+  letter-spacing: 0.045em;
 }
 
 
 /* ---------------------------------------------------------
    04 — HEADER
-   Slightly quieter and more editorial.
    --------------------------------------------------------- */
 
 .site-header {
@@ -2292,7 +2290,7 @@ body {
 
 /* ---------------------------------------------------------
    05 — HOME HERO
-   Reduce the "in your face" feeling.
+   Reduce overall visual scale.
    --------------------------------------------------------- */
 
 .home-hero {
@@ -2321,7 +2319,6 @@ body {
 
 /* ---------------------------------------------------------
    06 — SECTION HEADINGS
-   Slightly quieter hierarchy.
    --------------------------------------------------------- */
 
 .section-heading {
@@ -2335,19 +2332,40 @@ body {
 
 /* ---------------------------------------------------------
    07 — SELECTED WORK
-   Keep all existing image ratios and alignment.
-   Only increase breathing room.
+   Larger images / denser image field.
    --------------------------------------------------------- */
 
 .home-work-layout {
-  column-gap: 18px;
+  column-gap: 10px;
 
   padding-bottom: 112px;
 }
 
 .home-work-column {
-  gap: 52px;
+  gap: 36px;
 }
+
+
+/*
+   Portrait cards previously used 90%.
+
+   They now fill the entire half-column so that the
+   image field feels larger and the space between
+   the two columns becomes more deliberate.
+*/
+
+.home-work-card-narrow {
+  width: 100%;
+}
+
+#home-work-left .home-work-card-narrow {
+  align-self: stretch;
+}
+
+#home-work-right .home-work-card-narrow {
+  align-self: stretch;
+}
+
 
 .home-work-info {
   margin-top: 1px;
@@ -2357,8 +2375,18 @@ body {
   font-size: 14px;
 }
 
+
+/*
+   Keep metadata readable.
+   Consolas has a larger / cleaner character body
+   than the previous fallback monospace.
+*/
+
 .home-work-meta {
-  font-size: 10px;
+  font-size: 11px;
+  line-height: 1.45;
+
+  color: var(--color-muted);
 }
 
 .home-work-number {
@@ -2366,19 +2394,17 @@ body {
 }
 
 
-/*
-IMPORTANT:
+/* Center feature — slightly larger */
 
-.home-work-card-narrow remains 90%.
-.home-work-feature remains 66.666%.
+.home-work-feature {
+  width: 72%;
 
-Those proportions are intentionally untouched.
-*/
+  margin: 48px auto 0;
+}
 
 
 /* ---------------------------------------------------------
    08 — HOME JOURNAL
-   More like an editorial index.
    --------------------------------------------------------- */
 
 .home-journal {
@@ -2401,7 +2427,6 @@ Those proportions are intentionally untouched.
 
 /* ---------------------------------------------------------
    09 — HOME ABOUT
-   Reduce oversized manifesto feeling.
    --------------------------------------------------------- */
 
 .home-about {
@@ -2425,7 +2450,6 @@ Those proportions are intentionally untouched.
 
 /* ---------------------------------------------------------
    10 — GLOBAL PAGE TITLES
-   Less poster-like on desktop.
    --------------------------------------------------------- */
 
 .page-title {
@@ -2443,7 +2467,6 @@ Those proportions are intentionally untouched.
 
 /* ---------------------------------------------------------
    11 — PROJECT INDEX
-   More compact / archival.
    --------------------------------------------------------- */
 
 .project-index-section {
@@ -2462,7 +2485,8 @@ Those proportions are intentionally untouched.
 .project-index-location,
 .project-index-type,
 .project-index-office {
-  font-size: 10px;
+  font-size: 10.5px;
+  line-height: 1.45;
 }
 
 
@@ -2526,17 +2550,16 @@ Those proportions are intentionally untouched.
 /* ---------------------------------------------------------
    15 — WORK DETAIL
 
-   Deliberately preserve:
+   Intentionally preserve:
+
    --project-page-max: 1080px
    --project-column-width: 74%
 
-   The existing project publication scale already works.
    --------------------------------------------------------- */
 
 
 /* ---------------------------------------------------------
    16 — ARTICLE
-   Keep article comfortably narrow.
    --------------------------------------------------------- */
 
 .article-title {
@@ -2546,7 +2569,6 @@ Those proportions are intentionally untouched.
 
 /* ---------------------------------------------------------
    17 — DESKTOP WITH LIMITED WIDTH
-   Prevent 36px padding from becoming too aggressive.
    --------------------------------------------------------- */
 
 @media (max-width: 1200px) {
@@ -2565,7 +2587,6 @@ Those proportions are intentionally untouched.
 
 /* ---------------------------------------------------------
    18 — MOBILE
-   Preserve the existing mobile language.
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
@@ -2574,18 +2595,27 @@ Those proportions are intentionally untouched.
     --page-padding: 16px;
   }
 
+
+  /* HEADER */
+
   .site-header {
     height: auto;
   }
 
   .site-nav {
     font-size: 11px;
+
     gap: 18px;
   }
 
+
+  /* HERO */
+
   .home-hero {
     min-height: auto;
+
     grid-template-columns: 1fr;
+
     gap: 40px;
   }
 
@@ -2597,17 +2627,51 @@ Those proportions are intentionally untouched.
     min-height: 70vh;
   }
 
+
+  /* SECTION */
+
   .section-title {
     font-size: 27px;
   }
+
+
+  /* SELECTED WORK */
+
+  .home-work-layout {
+    column-gap: 0;
+  }
+
+  .home-work-column {
+    gap: 0;
+  }
+
+  .home-work-card,
+  .home-work-card-narrow {
+    width: 100% !important;
+  }
+
+  .home-work-feature {
+    width: 100%;
+
+    margin: 0 0 60px;
+  }
+
+
+  /* JOURNAL */
 
   .home-journal-item {
     min-height: 160px;
   }
 
+
+  /* ABOUT */
+
   .home-about-text {
     font-size: clamp(24px, 7vw, 34px);
   }
+
+
+  /* PAGE TITLE */
 
   .page-title h1 {
     font-size: clamp(58px, 18vw, 100px);
