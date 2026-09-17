@@ -64,34 +64,46 @@ else {
 
 
 
-  /* PAGE TITLE */
+  /* PAGE TITLE
+  ------------------------------------------------------- */
+
 
   document.title =
-    `${article.title} — Haotian Zhang`;
+    `${article.title} — ${SITE.name}`;
 
 
 
-  /* META DESCRIPTION */
+  /* META DESCRIPTION
+  ------------------------------------------------------- */
+
 
   const description =
     document.getElementById(
       "article-description"
+    ) ||
+    document.querySelector(
+      'meta[name="description"]'
     );
 
 
   if (description) {
 
+
     description.setAttribute(
       "content",
+
       article.excerpt ||
-      `${article.title} — Journal by Haotian Zhang.`
+
+      `${article.title} — Journal by ${SITE.name}.`
     );
 
   }
 
 
 
-  /* CATEGORY */
+  /* CATEGORY
+  ------------------------------------------------------- */
+
 
   const categoryElement =
     document.getElementById(
@@ -100,7 +112,8 @@ else {
 
 
   categoryElement.textContent =
-    category?.title || "Journal";
+    category?.title ||
+    "Journal";
 
 
   categoryElement.href =
@@ -110,7 +123,9 @@ else {
 
 
 
-  /* DATE */
+  /* DATE
+  ------------------------------------------------------- */
+
 
   document.getElementById(
     "article-date"
@@ -121,7 +136,9 @@ else {
 
 
 
-  /* TITLE */
+  /* TITLE
+  ------------------------------------------------------- */
+
 
   document.getElementById(
     "article-title"
@@ -130,7 +147,9 @@ else {
 
 
 
-  /* HERO */
+  /* HERO
+  ------------------------------------------------------- */
+
 
   const hero =
     document.getElementById(
@@ -161,13 +180,14 @@ else {
 
 
 
-  /* BODY */
+  /* BODY
+  ------------------------------------------------------- */
+
 
   const body =
     document.getElementById(
       "article-body"
     );
-
 
 
   if (article.body) {
@@ -180,12 +200,15 @@ else {
         /* PARAGRAPH */
 
         if (
-          block.type === "paragraph"
+          block.type ===
+          "paragraph"
         ) {
 
 
           const p =
-            document.createElement("p");
+            document.createElement(
+              "p"
+            );
 
 
           p.className =
@@ -196,7 +219,9 @@ else {
             block.text;
 
 
-          body.appendChild(p);
+          body.appendChild(
+            p
+          );
 
         }
 
@@ -205,12 +230,15 @@ else {
         /* HEADING */
 
         else if (
-          block.type === "heading"
+          block.type ===
+          "heading"
         ) {
 
 
           const heading =
-            document.createElement("h2");
+            document.createElement(
+              "h2"
+            );
 
 
           heading.className =
@@ -221,7 +249,9 @@ else {
             block.text;
 
 
-          body.appendChild(heading);
+          body.appendChild(
+            heading
+          );
 
         }
 
@@ -230,7 +260,8 @@ else {
         /* QUOTE */
 
         else if (
-          block.type === "quote"
+          block.type ===
+          "quote"
         ) {
 
 
@@ -248,7 +279,9 @@ else {
             block.text;
 
 
-          body.appendChild(quote);
+          body.appendChild(
+            quote
+          );
 
         }
 
@@ -257,7 +290,8 @@ else {
         /* IMAGE */
 
         else if (
-          block.type === "image"
+          block.type ===
+          "image"
         ) {
 
 
@@ -273,7 +307,9 @@ else {
 
 
           const image =
-            document.createElement("div");
+            document.createElement(
+              "div"
+            );
 
 
           image.className =
@@ -306,7 +342,9 @@ else {
 
 
 
-          figure.appendChild(image);
+          figure.appendChild(
+            image
+          );
 
 
 
@@ -327,13 +365,18 @@ else {
               block.caption;
 
 
-            figure.appendChild(caption);
+            figure.appendChild(
+              caption
+            );
 
           }
 
 
 
-          body.appendChild(figure);
+          body.appendChild(
+            figure
+          );
+
 
         }
 
