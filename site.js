@@ -1,22 +1,21 @@
 /* =========================================================
-   SITE RENDERER
-   Global identity, navigation, footer, metadata, active nav
+   SITE SYSTEM
+   Identity / Navigation / Metadata / Motion / Utilities
    ========================================================= */
 
+
+/* =========================================================
+   GLOBAL SITE DATA
+   ========================================================= */
 
 if (typeof SITE !== "undefined") {
 
 
-  /* =====================================================
-     SITE NAME
-     ===================================================== */
+  /* SITE NAME */
 
-  const siteNames =
-    document.querySelectorAll(".site-name");
-
-
-  siteNames.forEach(
-    element => {
+  document
+    .querySelectorAll(".site-name")
+    .forEach(element => {
 
       element.textContent =
         SITE.nameDisplay;
@@ -24,13 +23,11 @@ if (typeof SITE !== "undefined") {
       element.href =
         "index.html";
 
-    }
-  );
-
+    });
 
 
   /* =====================================================
-     DETECT CURRENT PAGE
+     CURRENT PAGE
      ===================================================== */
 
   const filename =
@@ -47,62 +44,38 @@ if (typeof SITE !== "undefined") {
   if (
     filename === "projects.html"
   ) {
-
-    pageKey =
-      "projects";
-
+    pageKey = "projects";
   }
-
 
   else if (
     filename === "journal.html"
   ) {
-
-    pageKey =
-      "journal";
-
+    pageKey = "journal";
   }
-
 
   else if (
     filename === "about.html"
   ) {
-
-    pageKey =
-      "about";
-
+    pageKey = "about";
   }
-
 
   else if (
     filename === "cv.html"
   ) {
-
-    pageKey =
-      "cv";
-
+    pageKey = "cv";
   }
-
 
   else if (
     filename === "work.html"
   ) {
-
-    pageKey =
-      "work";
-
+    pageKey = "work";
   }
-
 
   else if (
     filename === "article.html"
   ) {
-
-    pageKey =
-      "article";
-
+    pageKey = "article";
   }
-
 
 
   /* =====================================================
@@ -115,15 +88,18 @@ if (typeof SITE !== "undefined") {
     );
 
 
-  navigationLinks.forEach(
-    link => {
+  function updateNavigation() {
 
+    navigationLinks.forEach(link => {
 
       const href =
         link.getAttribute("href") || "";
 
 
-      /* TEXT */
+      link.classList.remove(
+        "active"
+      );
+
 
       if (
         href.includes("#work")
@@ -134,9 +110,10 @@ if (typeof SITE !== "undefined") {
 
       }
 
-
       else if (
-        href.includes("projects.html")
+        href.includes(
+          "projects.html"
+        )
       ) {
 
         link.textContent =
@@ -144,9 +121,10 @@ if (typeof SITE !== "undefined") {
 
       }
 
-
       else if (
-        href.includes("journal.html")
+        href.includes(
+          "journal.html"
+        )
       ) {
 
         link.textContent =
@@ -154,9 +132,10 @@ if (typeof SITE !== "undefined") {
 
       }
 
-
       else if (
-        href.includes("about.html")
+        href.includes(
+          "about.html"
+        )
       ) {
 
         link.textContent =
@@ -164,9 +143,10 @@ if (typeof SITE !== "undefined") {
 
       }
 
-
       else if (
-        href.includes("cv.html")
+        href.includes(
+          "cv.html"
+        )
       ) {
 
         link.textContent =
@@ -175,78 +155,78 @@ if (typeof SITE !== "undefined") {
       }
 
 
-
-      /* ACTIVE STATE */
-
-      let isActive =
-        false;
+      let active = false;
 
 
       if (
         pageKey === "projects" &&
-        href.includes("projects.html")
+        href.includes(
+          "projects.html"
+        )
       ) {
 
-        isActive =
-          true;
+        active = true;
 
       }
-
 
       else if (
         (
           pageKey === "journal" ||
           pageKey === "article"
         ) &&
-        href.includes("journal.html")
+        href.includes(
+          "journal.html"
+        )
       ) {
 
-        isActive =
-          true;
+        active = true;
 
       }
-
 
       else if (
         pageKey === "about" &&
-        href.includes("about.html")
+        href.includes(
+          "about.html"
+        )
       ) {
 
-        isActive =
-          true;
+        active = true;
 
       }
-
 
       else if (
         pageKey === "cv" &&
-        href.includes("cv.html")
+        href.includes(
+          "cv.html"
+        )
       ) {
 
-        isActive =
-          true;
+        active = true;
 
       }
 
-
       else if (
-        (
-          pageKey === "work" ||
-          (
-            pageKey === "home" &&
-            window.location.hash === "#work"
-          )
-        ) &&
+        pageKey === "work" &&
         href.includes("#work")
       ) {
 
-        isActive =
-          true;
+        active = true;
+
+      }
+
+      else if (
+        pageKey === "home" &&
+        window.location.hash ===
+          "#work" &&
+        href.includes("#work")
+      ) {
+
+        active = true;
 
       }
 
 
-      if (isActive) {
+      if (active) {
 
         link.classList.add(
           "active"
@@ -254,25 +234,29 @@ if (typeof SITE !== "undefined") {
 
       }
 
+    });
 
-    }
+  }
+
+
+  updateNavigation();
+
+
+  window.addEventListener(
+    "hashchange",
+    updateNavigation
   );
-
 
 
   /* =====================================================
      FOOTER
      ===================================================== */
 
-  const footers =
-    document.querySelectorAll(
+  document
+    .querySelectorAll(
       ".site-footer"
-    );
-
-
-  footers.forEach(
-    footer => {
-
+    )
+    .forEach(footer => {
 
       const children =
         Array.from(
@@ -280,22 +264,20 @@ if (typeof SITE !== "undefined") {
         );
 
 
-      if (children.length > 0) {
+      if (
+        children.length > 0
+      ) {
 
-        const first =
-          children[0];
-
-
-        first.textContent =
-          `© ${new Date().getFullYear()} ${SITE.nameDisplay}`;
+        children[0].textContent =
+          `© ${
+            new Date().getFullYear()
+          } ${SITE.nameDisplay}`;
 
       }
 
 
-
       children.forEach(
         element => {
-
 
           const text =
             element.textContent
@@ -308,60 +290,43 @@ if (typeof SITE !== "undefined") {
           ) {
 
             element.textContent =
-              SITE.location.toUpperCase();
+              SITE.location
+                .toUpperCase();
 
           }
-
 
         }
       );
 
-
-    }
-  );
-
+    });
 
 
   /* =====================================================
-     HOMEPAGE PROFILE
+     HOMEPAGE TEXT
      ===================================================== */
 
-  const profileTexts =
-    document.querySelectorAll(
+  document
+    .querySelectorAll(
       "[data-site-profile]"
-    );
-
-
-  profileTexts.forEach(
-    element => {
+    )
+    .forEach(element => {
 
       element.textContent =
         SITE.profile;
 
-    }
-  );
+    });
 
 
-
-  /* =====================================================
-     HOMEPAGE ABOUT
-     ===================================================== */
-
-  const aboutTexts =
-    document.querySelectorAll(
+  document
+    .querySelectorAll(
       "[data-site-about]"
-    );
-
-
-  aboutTexts.forEach(
-    element => {
+    )
+    .forEach(element => {
 
       element.textContent =
         SITE.about;
 
-    }
-  );
-
+    });
 
 
   /* =====================================================
@@ -373,7 +338,6 @@ if (typeof SITE !== "undefined") {
 
 
   if (pageData) {
-
 
     document.title =
       pageData.title;
@@ -387,18 +351,15 @@ if (typeof SITE !== "undefined") {
 
     if (!description) {
 
-
       description =
         document.createElement(
           "meta"
         );
 
-
       description.setAttribute(
         "name",
         "description"
       );
-
 
       document.head.appendChild(
         description
@@ -412,130 +373,139 @@ if (typeof SITE !== "undefined") {
       pageData.description
     );
 
-
   }
 
-
 }
+
+
 
 /* =========================================================
    SCROLL REVEAL
    ========================================================= */
 
+function initializeReveal() {
 
-const revealTargets = document.querySelectorAll(
-  `
-  .section-heading,
-  .home-work-card,
-  .home-work-feature,
-  .home-journal-item,
-  .home-about,
-  .project-index-row,
-  .journal-category,
-  .journal-post,
-  .about-intro,
-  .about-details,
-  .about-bio,
-  .cv-intro,
-  .cv-section,
-  .project-detail-header,
-  .project-hero-layout,
-  .project-copy-section,
-  .project-gallery-item,
-  .article-header,
-  .article-hero,
-  .article-paragraph,
-  .article-heading,
-  .article-figure
-  `
-);
-
-
-revealTargets.forEach(
-  element => {
-
-    element.classList.add(
-      "reveal-item"
+  const revealTargets =
+    document.querySelectorAll(
+      `
+      .section-heading,
+      .home-work-card,
+      .home-journal-item,
+      .home-about,
+      .project-strip-card,
+      .project-strip-section-head,
+      .journal-category,
+      .journal-post,
+      .about-intro,
+      .about-details,
+      .about-bio,
+      .cv-intro,
+      .cv-section,
+      .project-detail-header,
+      .project-hero-layout,
+      .project-copy-section,
+      .project-gallery-item,
+      .article-header,
+      .article-hero,
+      .article-paragraph,
+      .article-heading,
+      .article-figure
+      `
     );
 
-    if (
-      element.classList.contains("section-heading") ||
-      element.classList.contains("home-about") ||
-      element.classList.contains("about-intro") ||
-      element.classList.contains("cv-intro")
-    ) {
 
-      element.classList.add(
-        "reveal-line"
-      );
+  if (
+    !("IntersectionObserver"
+      in window)
+  ) {
 
-    }
+    revealTargets.forEach(
+      element =>
+        element.classList.add(
+          "is-visible"
+        )
+    );
+
+    return;
 
   }
-);
 
 
-/* ---------------------------------------------------------
-   OBSERVER
-   --------------------------------------------------------- */
+  const observer =
+    new IntersectionObserver(
 
+      entries => {
 
-const revealObserver =
-  new IntersectionObserver(
-
-    entries => {
-
-      entries.forEach(
-        entry => {
+        entries.forEach(entry => {
 
           if (
             entry.isIntersecting
           ) {
 
-            entry.target.classList.add(
-              "is-visible"
-            );
+            entry.target
+              .classList.add(
+                "is-visible"
+              );
 
-            revealObserver.unobserve(
+            observer.unobserve(
               entry.target
             );
 
           }
 
-        }
-      );
+        });
 
-    },
+      },
 
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px"
-    }
+      {
+        threshold: 0.08,
+        rootMargin:
+          "0px 0px -30px 0px"
+      }
 
-  );
-
-
-revealTargets.forEach(
-  element => {
-
-    revealObserver.observe(
-      element
     );
 
-  }
+
+  revealTargets.forEach(
+    element => {
+
+      element.classList.add(
+        "reveal-item"
+      );
+
+      observer.observe(
+        element
+      );
+
+    }
+  );
+
+}
+
+
+window.addEventListener(
+  "load",
+  initializeReveal
 );
+
+
 
 /* =========================================================
    BACK TO TOP
    ========================================================= */
 
-
 const backToTop =
-  document.createElement("button");
+  document.createElement(
+    "button"
+  );
 
 
 backToTop.className =
   "back-to-top";
+
+
+backToTop.type =
+  "button";
 
 
 backToTop.setAttribute(
@@ -544,11 +514,12 @@ backToTop.setAttribute(
 );
 
 
-backToTop.innerHTML =
-  `
+backToTop.innerHTML = `
   <span>TOP</span>
-  <span class="back-to-top-arrow">↑</span>
-  `;
+  <span class="back-to-top-arrow">
+    ↑
+  </span>
+`;
 
 
 document.body.appendChild(
@@ -556,29 +527,14 @@ document.body.appendChild(
 );
 
 
-/* SHOW / HIDE */
+function updateBackToTop() {
 
-const updateBackToTop = () => {
-
-  if (
+  backToTop.classList.toggle(
+    "is-visible",
     window.scrollY > 500
-  ) {
+  );
 
-    backToTop.classList.add(
-      "is-visible"
-    );
-
-  }
-
-  else {
-
-    backToTop.classList.remove(
-      "is-visible"
-    );
-
-  }
-
-};
+}
 
 
 window.addEventListener(
@@ -593,8 +549,6 @@ window.addEventListener(
 updateBackToTop();
 
 
-/* CLICK */
-
 backToTop.addEventListener(
   "click",
   () => {
@@ -606,23 +560,3 @@ backToTop.addEventListener(
 
   }
 );
-
-/* =========================================================
-   PROJECT STRIP ACTIVE STATE
-   ========================================================= */
-
-document.querySelectorAll(".project-strip-track").forEach(track => {
-  const cards = track.querySelectorAll(".project-strip-card");
-
-  cards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      cards.forEach(c => c.classList.remove("is-active"));
-      card.classList.add("is-active");
-    });
-
-    card.addEventListener("focus", () => {
-      cards.forEach(c => c.classList.remove("is-active"));
-      card.classList.add("is-active");
-    });
-  });
-});
