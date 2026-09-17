@@ -35,7 +35,7 @@ const WORKS = {
       image: 
         "images/projects/metropolitan-park/01-hero.jpg",
 
-      position: "50% 50%"
+      position: "0% 50%"
 
     },
 
@@ -55,7 +55,7 @@ const WORKS = {
       image: 
          "images/projects/metropolitan-park/01-hero.jpg",
 
-      position: "50% 50%"
+      position: "0% 50%"
 
     },
 
@@ -79,7 +79,7 @@ const WORKS = {
       image: 
          "images/projects/metropolitan-park/01-hero.jpg",
 
-      position: "50% 50%"
+      position: "0% 50%"
 
     },
 
