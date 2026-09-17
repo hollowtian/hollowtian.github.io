@@ -1,6 +1,6 @@
 /* =========================================================
    SITE RENDERER
-   Global identity, navigation, footer and metadata
+   Global identity, navigation, footer, metadata, active nav
    ========================================================= */
 
 
@@ -11,11 +11,8 @@ if (typeof SITE !== "undefined") {
      SITE NAME
      ===================================================== */
 
-
   const siteNames =
-    document.querySelectorAll(
-      ".site-name"
-    );
+    document.querySelectorAll(".site-name");
 
 
   siteNames.forEach(
@@ -33,191 +30,8 @@ if (typeof SITE !== "undefined") {
 
 
   /* =====================================================
-     NAVIGATION
-     ===================================================== */
-
-
-  const navigationLinks =
-    document.querySelectorAll(
-      ".site-nav a"
-    );
-
-
-  navigationLinks.forEach(
-    link => {
-
-
-      const href =
-        link.getAttribute("href") || "";
-
-
-      if (
-        href.includes("#work")
-      ) {
-
-        link.textContent =
-          SITE.navigation.selectedWork;
-
-      }
-
-
-      else if (
-        href.includes("projects.html")
-      ) {
-
-        link.textContent =
-          SITE.navigation.projectIndex;
-
-      }
-
-
-      else if (
-        href.includes("journal.html")
-      ) {
-
-        link.textContent =
-          SITE.navigation.journal;
-
-      }
-
-
-      else if (
-        href.includes("about.html")
-      ) {
-
-        link.textContent =
-          SITE.navigation.about;
-
-      }
-
-
-      else if (
-        href.includes("cv.html")
-      ) {
-
-        link.textContent =
-          SITE.navigation.cv;
-
-      }
-
-
-    }
-  );
-
-
-
-  /* =====================================================
-     FOOTER
-     ===================================================== */
-
-
-  const footers =
-    document.querySelectorAll(
-      ".site-footer"
-    );
-
-
-  footers.forEach(
-    footer => {
-
-
-      const children =
-        Array.from(
-          footer.children
-        );
-
-
-      if (children.length > 0) {
-
-
-        const first =
-          children[0];
-
-
-        first.textContent =
-          `© ${new Date().getFullYear()} ${SITE.nameDisplay}`;
-
-      }
-
-
-
-      children.forEach(
-        element => {
-
-
-          const text =
-            element.textContent
-              .trim()
-              .toUpperCase();
-
-
-          if (
-            text === "NEW YORK"
-          ) {
-
-            element.textContent =
-              SITE.location.toUpperCase();
-
-          }
-
-
-        }
-      );
-
-
-    }
-  );
-
-
-
-  /* =====================================================
-     HOMEPAGE PROFILE
-     ===================================================== */
-
-
-  const profileTexts =
-    document.querySelectorAll(
-      "[data-site-profile]"
-    );
-
-
-  profileTexts.forEach(
-    element => {
-
-      element.textContent =
-        SITE.profile;
-
-    }
-  );
-
-
-
-  /* =====================================================
-     HOMEPAGE ABOUT
-     ===================================================== */
-
-
-  const aboutTexts =
-    document.querySelectorAll(
-      "[data-site-about]"
-    );
-
-
-  aboutTexts.forEach(
-    element => {
-
-      element.textContent =
-        SITE.about;
-
-    }
-  );
-
-
-
-  /* =====================================================
      DETECT CURRENT PAGE
      ===================================================== */
-
 
   const filename =
     window.location.pathname
@@ -292,9 +106,267 @@ if (typeof SITE !== "undefined") {
 
 
   /* =====================================================
-     PAGE METADATA
+     NAVIGATION
      ===================================================== */
 
+  const navigationLinks =
+    document.querySelectorAll(
+      ".site-nav a"
+    );
+
+
+  navigationLinks.forEach(
+    link => {
+
+
+      const href =
+        link.getAttribute("href") || "";
+
+
+      /* TEXT */
+
+      if (
+        href.includes("#work")
+      ) {
+
+        link.textContent =
+          SITE.navigation.selectedWork;
+
+      }
+
+
+      else if (
+        href.includes("projects.html")
+      ) {
+
+        link.textContent =
+          SITE.navigation.projectIndex;
+
+      }
+
+
+      else if (
+        href.includes("journal.html")
+      ) {
+
+        link.textContent =
+          SITE.navigation.journal;
+
+      }
+
+
+      else if (
+        href.includes("about.html")
+      ) {
+
+        link.textContent =
+          SITE.navigation.about;
+
+      }
+
+
+      else if (
+        href.includes("cv.html")
+      ) {
+
+        link.textContent =
+          SITE.navigation.cv;
+
+      }
+
+
+
+      /* ACTIVE STATE */
+
+      let isActive =
+        false;
+
+
+      if (
+        pageKey === "projects" &&
+        href.includes("projects.html")
+      ) {
+
+        isActive =
+          true;
+
+      }
+
+
+      else if (
+        (
+          pageKey === "journal" ||
+          pageKey === "article"
+        ) &&
+        href.includes("journal.html")
+      ) {
+
+        isActive =
+          true;
+
+      }
+
+
+      else if (
+        pageKey === "about" &&
+        href.includes("about.html")
+      ) {
+
+        isActive =
+          true;
+
+      }
+
+
+      else if (
+        pageKey === "cv" &&
+        href.includes("cv.html")
+      ) {
+
+        isActive =
+          true;
+
+      }
+
+
+      else if (
+        (
+          pageKey === "work" ||
+          (
+            pageKey === "home" &&
+            window.location.hash === "#work"
+          )
+        ) &&
+        href.includes("#work")
+      ) {
+
+        isActive =
+          true;
+
+      }
+
+
+      if (isActive) {
+
+        link.classList.add(
+          "active"
+        );
+
+      }
+
+
+    }
+  );
+
+
+
+  /* =====================================================
+     FOOTER
+     ===================================================== */
+
+  const footers =
+    document.querySelectorAll(
+      ".site-footer"
+    );
+
+
+  footers.forEach(
+    footer => {
+
+
+      const children =
+        Array.from(
+          footer.children
+        );
+
+
+      if (children.length > 0) {
+
+        const first =
+          children[0];
+
+
+        first.textContent =
+          `© ${new Date().getFullYear()} ${SITE.nameDisplay}`;
+
+      }
+
+
+
+      children.forEach(
+        element => {
+
+
+          const text =
+            element.textContent
+              .trim()
+              .toUpperCase();
+
+
+          if (
+            text === "NEW YORK"
+          ) {
+
+            element.textContent =
+              SITE.location.toUpperCase();
+
+          }
+
+
+        }
+      );
+
+
+    }
+  );
+
+
+
+  /* =====================================================
+     HOMEPAGE PROFILE
+     ===================================================== */
+
+  const profileTexts =
+    document.querySelectorAll(
+      "[data-site-profile]"
+    );
+
+
+  profileTexts.forEach(
+    element => {
+
+      element.textContent =
+        SITE.profile;
+
+    }
+  );
+
+
+
+  /* =====================================================
+     HOMEPAGE ABOUT
+     ===================================================== */
+
+  const aboutTexts =
+    document.querySelectorAll(
+      "[data-site-about]"
+    );
+
+
+  aboutTexts.forEach(
+    element => {
+
+      element.textContent =
+        SITE.about;
+
+    }
+  );
+
+
+
+  /* =====================================================
+     PAGE METADATA
+     ===================================================== */
 
   const pageData =
     SITE.pages[pageKey];
