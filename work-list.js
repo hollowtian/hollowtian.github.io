@@ -537,3 +537,515 @@ function initProjectIndexInteraction() {
 renderHomeWorks();
 
 renderProjectIndex();
+
+/* =========================================================
+   PROJECT INDEX — THUMBNAIL GRID
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SECTION
+   --------------------------------------------------------- */
+
+.project-strip-section {
+  margin-bottom: 120px;
+}
+
+
+.project-strip-section-head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+
+  gap: 24px;
+
+  align-items: end;
+
+  position: relative;
+
+  padding-top: 20px;
+  margin-bottom: 28px;
+}
+
+
+/* short graphic rule */
+
+.project-strip-section-head::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 72px;
+  height: 1px;
+
+  background: var(--color-text);
+}
+
+
+.project-strip-section-title {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(
+    28px,
+    2.5vw,
+    42px
+  );
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 600;
+}
+
+
+
+/* ---------------------------------------------------------
+   GRID
+   --------------------------------------------------------- */
+
+.project-strip-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      5,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    38px
+    18px;
+
+  align-items: start;
+}
+
+
+
+/* ---------------------------------------------------------
+   CARD
+   --------------------------------------------------------- */
+
+.project-strip-card {
+  display: block;
+
+  min-width: 0;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.32s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+
+.project-strip-card-inactive {
+  cursor: default;
+}
+
+
+
+/* ---------------------------------------------------------
+   IMAGE
+   --------------------------------------------------------- */
+
+.project-strip-thumb {
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background-color:
+    var(--color-placeholder);
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+
+  /* default state */
+
+  filter:
+    grayscale(100%);
+
+  opacity: 0.58;
+
+
+  transform:
+    scale(0.96);
+
+
+  transform-origin:
+    center center;
+
+
+  transition:
+    filter 0.42s ease,
+    opacity 0.42s ease,
+    transform 0.42s
+      cubic-bezier(.2,.7,.2,1);
+}
+
+
+
+/* placeholder */
+
+.project-strip-thumb::after {
+  content: "IMAGE";
+
+  position: absolute;
+
+  left: 8px;
+  bottom: 8px;
+
+  font-family:
+    var(--font-technical);
+
+  font-size: 8px;
+
+  letter-spacing: 0.06em;
+}
+
+
+.project-strip-thumb.has-image::after {
+  content: none;
+}
+
+
+
+/* ---------------------------------------------------------
+   ACTIVE IMAGE
+   --------------------------------------------------------- */
+
+.project-strip-card:hover
+.project-strip-thumb,
+
+.project-strip-card:focus-visible
+.project-strip-thumb,
+
+.project-strip-card.is-active
+.project-strip-thumb {
+
+  filter:
+    grayscale(0%);
+
+  opacity: 1;
+
+  transform:
+    scale(1);
+}
+
+
+
+/* other projects fade slightly when one is active */
+
+.project-strip-grid:has(
+  .project-strip-card:hover
+)
+.project-strip-card:not(:hover)
+.project-strip-thumb {
+
+  opacity: 0.42;
+}
+
+
+
+/* ---------------------------------------------------------
+   INFORMATION
+   --------------------------------------------------------- */
+
+.project-strip-meta {
+  position: relative;
+
+  padding-top: 10px;
+}
+
+
+.project-strip-number {
+  margin-bottom: 6px;
+
+  font-family:
+    var(--font-technical);
+
+  font-size: 9px;
+
+  line-height: 1;
+
+  color:
+    var(--color-muted);
+}
+
+
+.project-strip-name {
+  padding-right: 22px;
+
+  font-family:
+    var(--font-display);
+
+  font-size: 15px;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+
+  font-weight: 600;
+}
+
+
+.project-strip-subtitle {
+  margin-top: 5px;
+
+  font-family:
+    var(--font-technical);
+
+  font-size: 10px;
+
+  line-height: 1.4;
+
+  color:
+    var(--color-muted);
+}
+
+
+.project-strip-detail {
+  margin-top: 2px;
+
+  font-family:
+    var(--font-technical);
+
+  font-size: 9px;
+
+  line-height: 1.4;
+
+  color:
+    #777;
+}
+
+
+.project-strip-detail span {
+  padding: 0 3px;
+}
+
+
+
+/* ---------------------------------------------------------
+   ARROW
+   --------------------------------------------------------- */
+
+.project-strip-meta::after {
+  content: "↗";
+
+  position: absolute;
+
+  top: 8px;
+  right: 0;
+
+  font-family:
+    var(--font-technical);
+
+  font-size: 11px;
+
+  opacity: 0;
+
+  transform:
+    translateX(-6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.project-strip-card:hover
+.project-strip-meta::after,
+
+.project-strip-card:focus-visible
+.project-strip-meta::after,
+
+.project-strip-card.is-active
+.project-strip-meta::after {
+
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+
+/* no arrow for inactive projects */
+
+.project-strip-card-inactive
+.project-strip-meta::after {
+
+  display: none;
+}
+
+
+
+/* ---------------------------------------------------------
+   TEXT ACTIVE STATE
+   --------------------------------------------------------- */
+
+.project-strip-card:hover
+.project-strip-number,
+
+.project-strip-card:hover
+.project-strip-subtitle,
+
+.project-strip-card:hover
+.project-strip-detail,
+
+.project-strip-card.is-active
+.project-strip-number,
+
+.project-strip-card.is-active
+.project-strip-subtitle,
+
+.project-strip-card.is-active
+.project-strip-detail {
+
+  color:
+    var(--color-text);
+}
+
+
+
+/* ---------------------------------------------------------
+   SUBTLE LIFT
+   --------------------------------------------------------- */
+
+.project-strip-card:hover,
+.project-strip-card.is-active {
+
+  transform:
+    translateY(-3px);
+}
+
+
+.project-strip-card-inactive:hover {
+
+  transform:
+    none;
+}
+
+
+
+/* =========================================================
+   PROJECT INDEX — RESPONSIVE
+   ========================================================= */
+
+
+@media (max-width: 1300px) {
+
+  .project-strip-grid {
+
+    grid-template-columns:
+      repeat(
+        4,
+        minmax(0, 1fr)
+      );
+
+  }
+
+}
+
+
+@media (max-width: 1000px) {
+
+  .project-strip-grid {
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .project-strip-section {
+    margin-bottom: 90px;
+  }
+
+
+  .project-strip-section-head {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .project-strip-grid {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap:
+      32px
+      12px;
+  }
+
+
+  .project-strip-thumb {
+
+    transform:
+      none;
+
+    opacity:
+      0.7;
+  }
+
+
+  .project-strip-card:hover {
+
+    transform:
+      none;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .project-strip-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .project-strip-thumb {
+
+    aspect-ratio:
+      4 / 3;
+  }
+
+}
