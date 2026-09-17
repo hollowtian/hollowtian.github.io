@@ -1982,3 +1982,99 @@ img {
   }
 
 }
+
+/* =========================================================
+   404 PAGE
+   ========================================================= */
+
+.error-404 {
+  padding: 48px 0 120px;
+}
+
+.error-404-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+  border-top: 1px solid #111;
+  padding-top: 32px;
+}
+
+.error-404-copy {
+  max-width: 520px;
+}
+
+.error-404-title {
+  font-size: clamp(88px, 14vw, 180px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin: 12px 0 20px;
+  font-weight: 700;
+}
+
+.error-404-subtitle {
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.error-404-text {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 460px;
+  margin-bottom: 18px;
+}
+
+.error-404-note {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.error-404-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.error-404-link {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #111;
+  padding-bottom: 3px;
+}
+
+.error-404-graphic {
+  width: 100%;
+}
+
+.error-404-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #d9d8d3;
+}
+
+.error-404-caption {
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .error-404-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .error-404-title {
+    font-size: clamp(72px, 22vw, 120px);
+  }
+
+  .error-404-subtitle {
+    font-size: 22px;
+  }
+}
