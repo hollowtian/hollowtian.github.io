@@ -32,7 +32,8 @@ const WORKS = {
 
       show: true,
 
-      image: null,
+      image: 
+        "images/projects/metropolitan-park/01-hero.jpg",
 
       position: "50% 50%"
 
@@ -51,7 +52,8 @@ const WORKS = {
 
       size: "full",
 
-      image: null,
+      image: 
+         "images/projects/metropolitan-park/01-hero.jpg",
 
       position: "50% 50%"
 
@@ -74,7 +76,8 @@ const WORKS = {
 
     hero: {
 
-      image: null,
+      image: 
+         "images/projects/metropolitan-park/01-hero.jpg",
 
       position: "50% 50%"
 
