@@ -2032,10 +2032,15 @@ img {
   margin-bottom: 32px;
 }
 
-.error-404-links {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
+.error-404-link {
+  display: inline-block;
+
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid #111;
+  padding-bottom: 3px;
 }
 
 .error-404-link {
