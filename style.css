@@ -2917,3 +2917,432 @@ body {
   }
 
 }
+
+/* =========================================================
+   GRAPHIC REFINEMENT — PASS 03
+   Dynamic Transitions + Lighter Rules
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   01 — REDUCE FULL-WIDTH SECTION RULES
+   --------------------------------------------------------- */
+
+.section-heading {
+  border-top: none;
+
+  position: relative;
+
+  padding-top: 22px;
+  padding-bottom: 18px;
+}
+
+
+/* short rule instead of full-width rule */
+
+.section-heading::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 84px;
+  height: 1px;
+
+  background: var(--color-text);
+
+  transform-origin: left center;
+}
+
+
+/* registration mark */
+
+.section-heading::after {
+  content: "+";
+
+  position: absolute;
+
+  top: -7px;
+  right: 0;
+
+  font-family: var(--font-technical);
+  font-size: 10px;
+
+  color: var(--color-muted);
+}
+
+
+/* ---------------------------------------------------------
+   02 — HOME ABOUT RULE
+   --------------------------------------------------------- */
+
+.home-about {
+  border-top: none;
+
+  position: relative;
+
+  padding-top: 34px;
+}
+
+.home-about::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 120px;
+  height: 1px;
+
+  background: var(--color-text);
+}
+
+
+/* ---------------------------------------------------------
+   03 — JOURNAL / ABOUT / CV INTRO RULES
+   --------------------------------------------------------- */
+
+.journal-intro,
+.about-intro,
+.cv-intro,
+.about-bio {
+  border-top: none;
+
+  position: relative;
+}
+
+.journal-intro::before,
+.about-intro::before,
+.cv-intro::before,
+.about-bio::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 96px;
+  height: 1px;
+
+  background: var(--color-text);
+}
+
+
+/* ---------------------------------------------------------
+   04 — PROJECT INDEX TABLE
+   Less table-like.
+   --------------------------------------------------------- */
+
+.project-index-table {
+  border-top: none;
+
+  position: relative;
+
+  padding-top: 12px;
+}
+
+.project-index-table::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 72px;
+  height: 1px;
+
+  background: var(--color-text);
+}
+
+
+/* soften row dividers */
+
+.project-index-row {
+  border-bottom-color: rgba(17, 17, 17, 0.16);
+
+  position: relative;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* hover no longer feels like table highlight */
+
+.project-index-row:hover {
+  background: transparent;
+
+  transform: translateX(4px);
+}
+
+
+/* short animated left line */
+
+.project-index-row::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--color-text);
+
+  transform: translateY(-50%);
+
+  transition:
+    width 0.25s ease;
+}
+
+.project-index-row:hover::before {
+  width: 24px;
+}
+
+
+/* arrow */
+
+.project-index-row::after {
+  content: "↗";
+
+  position: absolute;
+
+  right: 6px;
+
+  font-family: var(--font-technical);
+  font-size: 11px;
+
+  opacity: 0;
+
+  transform: translateX(-6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-index-row:hover::after {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ---------------------------------------------------------
+   05 — SELECTED WORK INTERACTION
+   --------------------------------------------------------- */
+
+.home-work-card {
+  position: relative;
+}
+
+.home-work-image {
+  transition:
+    transform 0.45s cubic-bezier(.2,.7,.2,1),
+    filter 0.45s ease;
+}
+
+.home-work-card:hover
+.home-work-image {
+  transform: translateY(-2px) scale(1.006);
+}
+
+
+/* project number moves slightly */
+
+.home-work-number {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.home-work-card:hover
+.home-work-number {
+  transform: translateX(-3px);
+}
+
+
+/* arrow appears */
+
+.home-work-info {
+  position: relative;
+}
+
+.home-work-info::after {
+  content: "↗";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  font-family: var(--font-technical);
+  font-size: 11px;
+
+  opacity: 0;
+
+  transform: translateX(-6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.home-work-card:hover
+.home-work-info::after {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ---------------------------------------------------------
+   06 — JOURNAL CATEGORY MOTION
+   --------------------------------------------------------- */
+
+.journal-category {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.journal-category:hover {
+  padding-left: 12px;
+}
+
+
+/* homepage journal tiles */
+
+.home-journal-item {
+  transition:
+    background-size 0.45s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.home-journal-item:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   07 — REVEAL SYSTEM
+   --------------------------------------------------------- */
+
+.reveal-item {
+  opacity: 0;
+
+  transform: translateY(14px);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* line draw */
+
+.reveal-line::before {
+  transform: scaleX(0);
+
+  transition:
+    transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal-line.is-visible::before {
+  transform: scaleX(1);
+}
+
+
+/* ---------------------------------------------------------
+   08 — HEADER
+   Slightly softer top rule.
+   --------------------------------------------------------- */
+
+.site-header {
+  border-bottom-color: rgba(17, 17, 17, 0.55);
+}
+
+
+/* ---------------------------------------------------------
+   09 — FOOTER
+   --------------------------------------------------------- */
+
+.site-footer {
+  border-top-color: rgba(17, 17, 17, 0.55);
+}
+
+
+/* ---------------------------------------------------------
+   10 — REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal-item,
+  .reveal-line::before,
+  .home-work-image,
+  .project-index-row,
+  .project-index-row::before,
+  .project-index-row::after,
+  .home-work-info::after,
+  .home-journal-item,
+  .journal-category {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .reveal-item {
+    opacity: 1;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   11 — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .section-heading::before,
+  .home-about::before,
+  .journal-intro::before,
+  .about-intro::before,
+  .cv-intro::before,
+  .about-bio::before {
+    width: 56px;
+  }
+
+  .project-index-row:hover {
+    transform: none;
+  }
+
+  .project-index-row:hover::before,
+  .project-index-row::after,
+  .home-work-info::after {
+    display: none;
+  }
+
+  .home-work-card:hover
+  .home-work-image,
+  .home-journal-item:hover {
+    transform: none;
+  }
+
+}
