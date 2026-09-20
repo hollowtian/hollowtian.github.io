@@ -172,19 +172,6 @@ img {
    SECTION HEADER SYSTEM
    ========================================================= */
 
-
-/*
-   Universal hierarchy:
-
-   SMALL TECHNICAL LABEL
-   Medium section descriptor
-   ──────
-
-   The two pieces are now intentionally grouped
-   rather than separated across the page.
-*/
-
-
 .section-heading {
   position: relative;
 
@@ -279,6 +266,8 @@ img {
 }
 
 
+/* LOGO */
+
 .site-name {
   width: 30px;
   height: 30px;
@@ -314,6 +303,9 @@ img {
 
   opacity: .78;
 }
+
+
+/* NAV */
 
 .site-nav {
   display: flex;
@@ -454,7 +446,13 @@ img {
 }
 
 
+/* =========================================================
+   HOME TITLE — SECTION CUT TYPOGRAPHY
+   ========================================================= */
+
 .home-title {
+  position: relative;
+
   font-family:
     var(--font-display);
 
@@ -474,13 +472,160 @@ img {
 
   text-transform:
     uppercase;
+
+  cursor: default;
 }
 
 
-.home-title span {
+/* ---------------------------------------------------------
+   TITLE LINE
+   --------------------------------------------------------- */
+
+.home-title-line {
   display: block;
+
+  width: fit-content;
+
+  position: relative;
+
+  color: transparent;
+
+  white-space: nowrap;
+
+  transition:
+    letter-spacing
+    .42s
+    cubic-bezier(
+      .2,
+      .75,
+      .2,
+      1
+    );
 }
 
+
+/* ---------------------------------------------------------
+   TWO VISIBLE SLICES
+   --------------------------------------------------------- */
+
+.home-title-line::before,
+.home-title-line::after {
+  content:
+    attr(data-text);
+
+  position: absolute;
+
+  inset: 0;
+
+  color:
+    var(--color-text);
+
+  pointer-events: none;
+
+  will-change:
+    transform;
+
+  transition:
+    transform
+    .42s
+    cubic-bezier(
+      .2,
+      .75,
+      .2,
+      1
+    );
+}
+
+
+/* TOP HALF */
+
+.home-title-line::before {
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      100% 51%,
+      0 51%
+    );
+}
+
+
+/* BOTTOM HALF */
+
+.home-title-line::after {
+  clip-path:
+    polygon(
+      0 49%,
+      100% 49%,
+      100% 100%,
+      0 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   DESKTOP SECTION-CUT HOVER
+   --------------------------------------------------------- */
+
+@media
+(hover: hover)
+and
+(pointer: fine) {
+
+  /*
+     HAOTIAN
+     Top slice → right
+     Bottom slice → left
+  */
+
+  .home-title:hover
+  .home-title-line-1::before {
+    transform:
+      translateX(9px);
+  }
+
+
+  .home-title:hover
+  .home-title-line-1::after {
+    transform:
+      translateX(-5px);
+  }
+
+
+  /*
+     ZHANG
+     Reverse direction.
+  */
+
+  .home-title:hover
+  .home-title-line-2::before {
+    transform:
+      translateX(-7px);
+  }
+
+
+  .home-title:hover
+  .home-title-line-2::after {
+    transform:
+      translateX(6px);
+  }
+
+
+  /*
+     Tiny spacing change makes the word feel
+     mechanically displaced rather than glitched.
+  */
+
+  .home-title:hover
+  .home-title-line {
+    letter-spacing:
+      -0.052em;
+  }
+
+}
+
+
+/* HOME HERO INFO */
 
 .home-hero-info {
   display: grid;
@@ -929,9 +1074,7 @@ img {
 }
 
 
-.home-journal-item:not(
-  .has-image
-):hover {
+.home-journal-item:not(.has-image):hover {
   background-color:
     #c9c9c4;
 }
@@ -1007,11 +1150,6 @@ img {
   margin-bottom: 120px;
 }
 
-
-/*
-   The Project Index now uses exactly the same
-   label + title hierarchy as homepage sections.
-*/
 
 .project-strip-section-head {
   position: relative;
@@ -1808,10 +1946,6 @@ img {
     var(--color-text);
 }
 
-
-/*
-   CV uses the same compact stacked hierarchy.
-*/
 
 .cv-section-heading {
   display: flex;
@@ -2719,7 +2853,7 @@ img {
     rotate(-8deg);
 
   background:
-    rgba(0,0,0,.05);
+    rgba(0, 0, 0, .05);
 }
 
 
@@ -2957,6 +3091,8 @@ img {
   }
 
 
+  /* HEADER */
+
   .site-header {
     min-height: 0;
 
@@ -2977,6 +3113,8 @@ img {
   }
 
 
+  /* PAGE TITLE */
+
   .page-title {
     padding:
       28px 0 60px;
@@ -2993,9 +3131,11 @@ img {
   }
 
 
+  /* SECTION SYSTEM */
+
   .section-heading {
     padding:
-      20px 0 20px;
+      20px 0;
   }
 
 
@@ -3010,6 +3150,8 @@ img {
     font-size: 20px;
   }
 
+
+  /* HERO */
 
   .home-hero {
     grid-template-columns:
@@ -3026,6 +3168,17 @@ img {
   }
 
 
+  /*
+     Touch screens retain the sliced rendering
+     but do not animate.
+  */
+
+  .home-title-line::before,
+  .home-title-line::after {
+    transform: none;
+  }
+
+
   .home-hero-image {
     min-height: 70vh;
   }
@@ -3038,6 +3191,8 @@ img {
       1fr;
   }
 
+
+  /* SELECTED WORK */
 
   .home-work-layout {
     display: block;
@@ -3071,6 +3226,8 @@ img {
   }
 
 
+  /* JOURNAL */
+
   .home-journal-grid {
     grid-template-columns:
       1fr;
@@ -3096,6 +3253,8 @@ img {
   }
 
 
+  /* HOME ABOUT */
+
   .home-about {
     grid-template-columns:
       1fr;
@@ -3103,6 +3262,8 @@ img {
     gap: 28px;
   }
 
+
+  /* INTERNAL INTRO SECTIONS */
 
   .journal-intro,
   .about-intro,
@@ -3114,6 +3275,8 @@ img {
     gap: 28px;
   }
 
+
+  /* JOURNAL PAGE */
 
   .journal-category {
     grid-template-columns:
@@ -3139,6 +3302,8 @@ img {
       1fr;
   }
 
+
+  /* ABOUT / CV */
 
   .about-details,
   .cv-skills-grid,
@@ -3170,6 +3335,8 @@ img {
     gap: 10px;
   }
 
+
+  /* PROJECT INDEX */
 
   .project-strip-section {
     margin-bottom: 90px;
@@ -3204,6 +3371,8 @@ img {
     transform: none;
   }
 
+
+  /* WORK / ARTICLE */
 
   .project-page,
   .article-page {
@@ -3282,6 +3451,8 @@ img {
   }
 
 
+  /* 404 */
+
   .error-404-grid {
     grid-template-columns:
       1fr;
@@ -3289,6 +3460,8 @@ img {
     gap: 36px;
   }
 
+
+  /* BACK TO TOP */
 
   .back-to-top {
     right: 16px;
@@ -3309,13 +3482,11 @@ img {
 
 
 /* =========================================================
-   REDUCED MOTION
+   20 — REDUCED MOTION
    ========================================================= */
 
-@media (
-  prefers-reduced-motion:
-  reduce
-) {
+@media
+(prefers-reduced-motion: reduce) {
 
   *,
   *::before,
@@ -3332,6 +3503,14 @@ img {
     opacity: 1;
 
     transform: none;
+  }
+
+
+  .home-title-line,
+  .home-title-line::before,
+  .home-title-line::after {
+    transform:
+      none !important;
   }
 
 }
